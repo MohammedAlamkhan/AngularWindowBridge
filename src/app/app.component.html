@@ -1,1 +1,3 @@
-<h1>test</h1>
+<div *ngFor="let app of applist" >
+  <h1 (click)="launchApp(app.packageName)">{{app.label}}</h1>
+</div>
