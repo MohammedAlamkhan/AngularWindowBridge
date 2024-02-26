@@ -1,3 +1,32 @@
-<div *ngFor="let app of applist" >
+<!-- <div *ngFor="let app of applist" >
   <h1 (click)="launchApp(app.packageName)">{{app.label}}</h1>
+</div> -->
+
+<div class="container">
+  <div class="sub-container">
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+  </div>
+  <div class="sub-container">
+    <app-tile size="normal" [title]="''" [content]="''"></app-tile>
+  </div>
 </div>
+<div class="container">
+  <div class="sub-container">
+    <app-tile size="normal" [title]="''" [content]="''"></app-tile>
+  </div>
+  <div class="sub-container">
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+    <app-tile size="small" [title]="''" [content]="''"></app-tile>
+  </div>
+</div>
+<app-tile size="small" [title]="''" [content]="''"></app-tile>
+<app-tile size="small" [title]="''" [content]="''"></app-tile>
+<app-tile size="small" [title]="''" [content]="''"></app-tile>
+<app-tile size="small" [title]="''" [content]="''"></app-tile>
+<app-tile size="wide" [title]="''" [content]="''"></app-tile>
+<app-tile size="large" [title]="''" [content]="''"></app-tile>
