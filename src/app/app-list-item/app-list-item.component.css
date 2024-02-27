@@ -29,7 +29,7 @@
   }
   
   .app-list-item span {
-    font-size: 40px;
+    font-size: 35px;
     color: white; /* Adjust text color based on reference image */
     font-family: "Segoe UI";
     font-weight: 300;
@@ -41,6 +41,11 @@
     padding: 0;
     opacity: 1;
     font-family: "Segoe UI";
+    display: inline-block;
+    max-width: 70%; 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   
  .icontile{

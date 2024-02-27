@@ -39,6 +39,8 @@ export class DrawerComponent implements OnInit{
     console.log(filteredApps); // You can do whatever you want with the filteredApps, e.g., assign it to a property for displaying in the UI
     if ($event.keyCode === 13) {
       this.bridgeService.launchApp(this.filteredAppList[0].packageName);
+      ($event.target as HTMLInputElement).value = ''; 
+      this.filteredAppList = this.appList
     }
   
 }
