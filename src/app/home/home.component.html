@@ -1,8 +1,3 @@
-<!-- <div *ngFor="let app of applist" >
-  <h1 (click)="launchApp(app.packageName)">{{app.label}}</h1>
-</div> -->
-
-
 <div class="container">
     <div class="sub-container">
   
@@ -30,5 +25,5 @@
   <app-tile size="small" [title]="''" [content]="''" [iconName]="'appbar.phone'"></app-tile>
   <app-tile size="small" [title]="''" [content]="''" [iconName]="'appbar.phone'"></app-tile>
   <app-tile size="small" [title]="''" [content]="''" [iconName]="'appbar.phone'"></app-tile>
-  <app-tile size="wide" [title]="''" [content]="''" [iconName]="'appbar.phone'"></app-tile>
+  <app-tile (click)="launchRouter()" size="wide" [title]="''" [content]="''" [iconName]="'appbar.phone'"></app-tile>
   <app-tile size="large" [title]="''" [content]="''" [iconName]="'appbar.phone'"></app-tile>

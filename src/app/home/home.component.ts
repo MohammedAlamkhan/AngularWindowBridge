@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet,  Router } from '@angular/router';
 import {CommonModule} from "@angular/common"
 import { TileComponent } from '../tile/tile.component';
 
@@ -15,8 +15,18 @@ import { TileComponent } from '../tile/tile.component';
 
 export class HomeComponent implements OnInit{
   applist: any;
+  constructor(
+    private router: Router){
+
+    }
   async ngOnInit(): Promise<void> {
- 
+    
   }
+
+  launchRouter(){
+    this.router.navigate(['/drawer'])
+  }
+
+
 }
 
