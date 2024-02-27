@@ -1,5 +1,11 @@
 <div class="tile" [style.width]="calculateTileDimensions().width" [style.height]="calculateTileDimensions().height" [style.margin]="calculateTileDimensions().border">
     <div class="tile-content">
+    
+        <img *ngIf="iconName" [src]="iconUrl" alt="Icon">
+  
+     
+    </div>
+    <div>
       <h2>{{ title }}</h2>
       <p>{{ content }}</p>
     </div>

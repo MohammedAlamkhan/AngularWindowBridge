@@ -8,18 +8,12 @@
     display: inline-flex; /* or inline-block */
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
     background-color: cadetblue;
   }
   
-  .tile-content {
+  
+  .tile-content img {
     text-align: center;
+    max-width: 100%; /* Ensure the icon doesn't exceed the tile's width */
+    max-height: 100%; /* Ensure the icon doesn't exceed the tile's height */
   }
-  
-  
-  .tile-content {
-    text-align: center;
-  }
-  
-
-  

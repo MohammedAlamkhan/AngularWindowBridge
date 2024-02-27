@@ -1,0 +1,55 @@
+/* .app-list-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .app-list-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  } */
+
+  .app-list-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: black; /* Set background color for better contrast */
+    cursor: pointer; /* Indicate interactivity */
+    transition: 0.2s all ease-in-out; /* Add smooth hover effect */
+  }
+ 
+  .app-list-item img {
+    width: 40px; /* Adjust width based on reference image */
+    height: 40px; /* Adjust height based on reference image */
+    margin-right: 16px; /* Adjust margin based on reference image */
+    border-radius: 50%; /* Apply circular shape */
+    object-fit: cover; /* Ensure image fills the container */
+  }
+  
+  .app-list-item span {
+    font-size: 40px;
+    color: white; /* Adjust text color based on reference image */
+    font-family: "Segoe UI";
+    font-weight: 300;
+    text-transform: lowercase;
+    line-height: normal;
+    white-space: nowrap;
+    display: inline-block;
+    margin-right: 20px;
+    padding: 0;
+    opacity: 1;
+    font-family: "Segoe UI";
+  }
+  
+ .icontile{
+    width: 50px;
+    height: 50px;
+    background-size: 130%;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 10px;
+    background-size: 140%;
+ }
+  

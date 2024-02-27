@@ -12,7 +12,16 @@ export class TileComponent {
   @Input() size: 'small' | 'normal' | 'wide' | 'large' = 'normal';
   @Input() title: string = '';
   @Input() content: string = '';
+  @Input() iconName: string = '';
   screenWidthUnit: number=0;
+  iconUrl: string="";
+
+ 
+
+  async ngOnInit(): Promise<void> {
+    this.iconUrl = `./../assets/icons/${this.iconName}.svg`;
+  }
+
 
   calculateTileDimensions(): { width: string; height: string, border:string } {
     this.screenWidthUnit = window.innerWidth/1200;
