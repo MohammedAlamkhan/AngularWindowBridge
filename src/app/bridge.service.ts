@@ -6,8 +6,8 @@ import { BridgeMock } from '@bridgelauncher/api-mock';
 })
 export class BridgeService {
   constructor() { 
-    //window.Bridge = new BridgeMock();
-    //Bridge.showToast('Hello, world!');
+    // window.Bridge = new BridgeMock();
+    // Bridge.showToast('Hello, world!');
 
   }
 

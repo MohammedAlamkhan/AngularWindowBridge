@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { BridgeService } from '../bridge.service';
 
 @Component({
   selector: 'app-tile',
@@ -13,12 +14,17 @@ export class TileComponent {
   @Input() title: string = '';
   @Input() content: string = '';
   @Input() iconName: string = '';
+  @Input() launchPackage: string ='';
   screenWidthUnit: number=0;
   iconUrl: string="";
+  tileColor = "cadetblue";
 
- 
+  constructor(private bridgeService: BridgeService){
+    
+  }
 
   async ngOnInit(): Promise<void> {
+    this.tileColor = localStorage.getItem("tileColor") + "";
     this.iconUrl = `./../assets/icons/${this.iconName}.svg`;
   }
 
@@ -58,6 +64,14 @@ export class TileComponent {
         return 1190*this.screenWidthUnit; // Aspect ratio maintained
       default:
         return 590*this.screenWidthUnit; // Default to normal size
+    }
+  }
+
+  launchApp(){
+    console.log("clicked")
+    if(this.launchPackage){
+      
+      this.bridgeService.launchApp(this.launchPackage);
     }
   }
 

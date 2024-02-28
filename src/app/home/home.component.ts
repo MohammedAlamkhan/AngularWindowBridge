@@ -23,8 +23,8 @@ export class HomeComponent implements OnInit{
     
   }
 
-  launchRouter(){
-    this.router.navigate(['/drawer'])
+  launchRouter(route:any){
+    this.router.navigate([route])
   }
 
 
