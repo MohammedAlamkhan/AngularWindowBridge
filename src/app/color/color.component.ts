@@ -19,4 +19,9 @@ export class ColorComponent implements OnInit{
 
     localStorage.setItem('tileColor', this.selectedColor);
   }
+
+  customColor($event:any){
+    const color = ($event.target as HTMLInputElement).value.toLowerCase();
+    this.pickColor(color);
+  }
 }

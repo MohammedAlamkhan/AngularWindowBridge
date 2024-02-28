@@ -40,3 +40,6 @@
         <div class="theme-color"  (click)="pickColor('#4800b8')" [style.background-color]="'#4800b8'" style="opacity: 1;"></div>
     </div>
 </div>
+
+<h2 class="colored">Add custom color</h2>
+<input (keydown)="customColor($event)" class="colorbox" type="text" placeholder="Text">

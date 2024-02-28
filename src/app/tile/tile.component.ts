@@ -17,17 +17,22 @@ export class TileComponent {
   @Input() launchPackage: string ='';
   screenWidthUnit: number=0;
   iconUrl: string="";
-  tileColor = "cadetblue";
+  tileColor = "Blue";
 
   constructor(private bridgeService: BridgeService){
+    if(localStorage.getItem("tileColor")){
+      this.tileColor = localStorage.getItem("tileColor") + "";
+    }else{
+      this.tileColor = "Blue"
+    }
     
   }
 
   async ngOnInit(): Promise<void> {
-    this.tileColor = localStorage.getItem("tileColor") + "";
     this.iconUrl = `./../assets/icons/${this.iconName}.svg`;
   }
 
+ 
 
   calculateTileDimensions(): { width: string; height: string, border:string } {
     this.screenWidthUnit = window.innerWidth/1200;
