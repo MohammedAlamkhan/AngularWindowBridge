@@ -1,6 +1,6 @@
 <app-header [icon]="'&#xE771;'" [label]="'Colors'"></app-header>
 <div class="tiles-preview" >
-    <div [style.background-color]="selectedColor" class="tiles-preview-inner"></div>
+    <div [style.background-color]="screenColor" class="tiles-preview-inner"></div>
 </div>
 <h2 class="colored">Choose a color</h2>
 
@@ -43,3 +43,14 @@
 
 <h2 class="colored">Add custom color</h2>
 <input (keydown)="customColor($event)" class="colorbox" type="text" placeholder="Text">
+
+
+<h2 class="colored">Choose a pallete</h2>
+
+<div *ngFor="let cp of colorPalettes" (click)="selectedPalette(cp)"  class="palette">
+    <div class="color" [style.background-color]="cp.colors[0]"></div>
+    <div class="color" [style.background-color]="cp.colors[1]"></div>
+    <div class="color" [style.background-color]="cp.colors[2]"></div>
+    <div class="color" [style.background-color]="cp.colors[3]"></div>
+    <div class="color" [style.background-color]="cp.colors[4]"></div>
+</div>    

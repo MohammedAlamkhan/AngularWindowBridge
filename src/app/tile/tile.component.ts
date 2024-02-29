@@ -17,13 +17,25 @@ export class TileComponent {
   @Input() launchPackage: string ='';
   screenWidthUnit: number=0;
   iconUrl: string="";
-  tileColor = "Blue";
+  tileColor:any;
+  tilePalette: any;
 
   constructor(private bridgeService: BridgeService){
+   
+    
+   
     if(localStorage.getItem("tileColor")){
       this.tileColor = localStorage.getItem("tileColor") + "";
-    }else{
-      this.tileColor = "Blue"
+      this.tilePalette = null;
+    }
+    if(localStorage.getItem("colorPalette")){
+      this.tilePalette =   (localStorage.getItem("colorPalette")+"").split(',');
+      this.tileColor=null;
+    }
+    if(!(localStorage.getItem("tileColor") || localStorage.getItem("colorPalette"))){
+      this.tileColor = "white"
+      localStorage.setItem('tileColor', "white");
+      this.tilePalette = null;
     }
     
   }
@@ -78,6 +90,18 @@ export class TileComponent {
       
       this.bridgeService.launchApp(this.launchPackage);
     }
+  }
+
+  getTileColor(){
+    if(this.tilePalette){
+      return this.tilePalette[this.getRandomInt(0, 4)];
+    }else{
+        return this.tileColor;
+    }
+  }
+
+   getRandomInt(min: any, max: any) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
 }
