@@ -1,13 +1,22 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { BridgeService } from '../bridge.service';
-
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { 
+  bounceInLeftAnimation,
+   bounceOutLeftAnimation,
+} from './../../assets/lib/'
+import { BrowserModule } from '@angular/platform-browser';
 @Component({
   selector: 'app-tile',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './tile.component.html',
-  styleUrl: './tile.component.css'
+  styleUrl: './tile.component.css',
+  animations: [
+    bounceInLeftAnimation(),
+    bounceOutLeftAnimation()
+  ]
 })
 export class TileComponent {
   @Input() size: 'small' | 'normal' | 'wide' | 'large' = 'normal';
@@ -19,6 +28,11 @@ export class TileComponent {
   iconUrl: string="";
   tileColor:any;
   tilePalette: any;
+  duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;;
+  delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;;
+
+  animationState = false;
+ 
 
   constructor(private bridgeService: BridgeService){
    
@@ -42,8 +56,16 @@ export class TileComponent {
 
   async ngOnInit(): Promise<void> {
     this.iconUrl = `./../assets/icons/${this.iconName}.svg`;
+    this.animate();
   }
 
+ 
+  animate() {
+    this.animationState = false;
+    setTimeout(() => {
+      this.animationState = true;
+    }, 1);
+  }
  
 
   calculateTileDimensions(): { width: string; height: string, border:string } {

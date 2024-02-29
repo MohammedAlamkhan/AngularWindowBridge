@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ColorComponent implements OnInit{
   selectedColor: any;
-  screenColor:any
+  screenColor="white";
   colorPalettes = [
     { label: "Melon high", colors: ["#f0fff0", "#f0fff1", "#f0fff5", "#f0fff7", "#f0fff9"] },
     { label: "ClaraWhites Color Palette", colors: ["#fffdd0", "#fffff0", "#f0ead6", "#faf0e6", "#ffffff"] },

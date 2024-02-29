@@ -1,4 +1,4 @@
-<div class="tile" (click)="launchApp()" [style.background-color]="getTileColor()" [style.width]="calculateTileDimensions().width" [style.height]="calculateTileDimensions().height" [style.margin]="calculateTileDimensions().border">
+<div  [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="tile" (click)="launchApp()" [style.background-color]="getTileColor()" [style.width]="calculateTileDimensions().width" [style.height]="calculateTileDimensions().height" [style.margin]="calculateTileDimensions().border">
     <div *ngIf="iconName" class="tile-content">
     
         <img  [src]="iconUrl" alt="Icon">
