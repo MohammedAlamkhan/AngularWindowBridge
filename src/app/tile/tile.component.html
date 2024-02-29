@@ -1,13 +1,13 @@
 <div class="tile" (click)="launchApp()" [style.background-color]="tileColor" [style.width]="calculateTileDimensions().width" [style.height]="calculateTileDimensions().height" [style.margin]="calculateTileDimensions().border">
-    <div class="tile-content">
+    <div *ngIf="iconName" class="tile-content">
     
-        <img *ngIf="iconName" [src]="iconUrl" alt="Icon">
+        <img  [src]="iconUrl" alt="Icon">
   
      
     </div>
-    <div>
-      <h2>{{ title }}</h2>
-      <p>{{ content }}</p>
+    <div *ngIf="title || content" >
+      <h2 *ngIf="title">{{ title }}</h2>
+      <p *ngIf="content">{{ content }}</p>
     </div>
   </div>
   
