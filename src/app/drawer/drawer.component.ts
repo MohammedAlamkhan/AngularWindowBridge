@@ -10,19 +10,12 @@ import { AppListItemComponent } from '../app-list-item/app-list-item.component';
   styleUrl: './drawer.component.css'
 })
 export class DrawerComponent implements OnInit{
-  appList:any;
   filteredAppList: any;
+  appList:any
   constructor(private bridgeService: BridgeService){}
   async ngOnInit(): Promise<void> {
-   let a = await this.bridgeService.getAppList();
-   this.appList = a.apps;
-   
-  for(let i=0; i<this.appList.length; i++){
-    const src = await this.bridgeService.getIcon(this.appList[i].packageName);
-    this.appList[i]["imageSrc"] = src
-  }
+    this.appList = JSON.parse(localStorage.getItem("appList")+"");
     this.filteredAppList = this.appList
-    console.log(this.appList)
   } 
 
   async getIcon(packageName: string){
