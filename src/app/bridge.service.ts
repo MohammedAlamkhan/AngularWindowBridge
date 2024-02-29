@@ -22,6 +22,20 @@ export class BridgeService {
      this.appList[i]["imageSrc"] = src
    }
      console.log(this.appList)
+
+     this.appList.sort((a:any, b:any) => {
+      const labelA = a.label.toUpperCase();
+      const labelB = b.label.toUpperCase();
+      if (labelA < labelB) {
+          return -1;
+      }
+      if (labelA > labelB) {
+          return 1;
+      }
+      return 0;
+    });
+
+
      localStorage.setItem("appList", JSON.stringify(this.appList))
    } 
  
