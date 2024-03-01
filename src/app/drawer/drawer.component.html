@@ -1,8 +1,8 @@
 
-    <h1 data-tab="tab1" class="pivot">Applications</h1>
-    <input (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
+    <h1 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" data-tab="tab1" class="pivot">Applications</h1>
+    <input [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
 <div *ngFor="let app of filteredAppList">
-    <app-app-list-item [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+    <app-app-list-item  [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
 </div>
 
 

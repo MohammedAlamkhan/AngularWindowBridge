@@ -116,14 +116,9 @@ export class TileComponent {
 
   getTileColor(){
     if(this.tilePalette){
-      return this.tilePalette[this.getRandomInt(0, 4)];
+      return this.tilePalette[Math.floor(Math.random() * (4 - 0 + 1)) + 0];
     }else{
         return this.tileColor;
     }
   }
-
-   getRandomInt(min: any, max: any) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
 }

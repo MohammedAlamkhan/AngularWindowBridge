@@ -1,4 +1,4 @@
-<div (click)="launch(packageName)" class="app-list-item">
+<div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (click)="launch(packageName)" class="app-list-item">
     <div [attr.id]="packageName" class="icontile">
 
     </div>

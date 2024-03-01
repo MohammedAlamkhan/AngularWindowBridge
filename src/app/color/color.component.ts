@@ -1,17 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { CommonModule } from '@angular/common';
-
+import { 
+  bounceInLeftAnimation,
+   bounceOutLeftAnimation,
+} from './../../assets/lib/'
 @Component({
   selector: 'app-color',
   standalone: true,
   imports: [HeaderComponent,  CommonModule],
   templateUrl: './color.component.html',
-  styleUrl: './color.component.css'
+  styleUrl: './color.component.css',
+  animations: [
+    bounceInLeftAnimation(),
+    bounceOutLeftAnimation()
+  ]
 })
 export class ColorComponent implements OnInit{
   selectedColor: any;
   screenColor="white";
+  duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
   colorPalettes = [
     { label: "Melon high", colors: ["#f0fff0", "#f0fff1", "#f0fff5", "#f0fff7", "#f0fff9"] },
     { label: "ClaraWhites Color Palette", colors: ["#fffdd0", "#fffff0", "#f0ead6", "#faf0e6", "#ffffff"] },
@@ -34,7 +43,23 @@ export class ColorComponent implements OnInit{
 
   ngOnInit(): void {
    this.selectedColor = localStorage.getItem("tileColor");
+   this.animate();
   }
+
+  
+   
+  animationState = false;
+  animate() {
+    this.animationState = false;
+    setTimeout(() => {
+      this.animationState = true;
+    }, 1);
+  }
+
+  randomVal(){
+    return Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  }
+
 
   pickColor(color: string){
     this.selectedColor= color;
