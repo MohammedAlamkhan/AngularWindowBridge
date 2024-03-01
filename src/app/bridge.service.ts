@@ -10,7 +10,7 @@ import { Observable, of } from 'rxjs';
 export class BridgeService {
   appList: any;
   constructor(private http: HttpClient) { 
-    window.Bridge = new BridgeMock();
+    //window.Bridge = new BridgeMock();
     // Bridge.showToast('Hello, world!');
     if(!localStorage.getItem("appList")){
       this.getFinalList();
@@ -19,10 +19,22 @@ export class BridgeService {
     
   }
 
+  
 
   async getFinalList(): Promise<void> {
     let a = await this.getAppList();
     this.appList = a.apps;
+    this.appList.sort((a:any, b:any) => {
+      const labelA = a.label.toUpperCase();
+      const labelB = b.label.toUpperCase();
+      if (labelA < labelB) {
+          return -1;
+      }
+      if (labelA > labelB) {
+          return 1;
+      }
+      return 0;
+    });
     
    for(let i=0; i<this.appList.length; i++){
      const src = await this.getAsset(this.appList[i].label, this.appList[i].packageName).subscribe(
@@ -37,17 +49,7 @@ export class BridgeService {
 
     
 
-     this.appList.sort((a:any, b:any) => {
-      const labelA = a.label.toUpperCase();
-      const labelB = b.label.toUpperCase();
-      if (labelA < labelB) {
-          return -1;
-      }
-      if (labelA > labelB) {
-          return 1;
-      }
-      return 0;
-    });
+   
     
 
     console.log("beforeTimeoout", this.appList)
@@ -72,10 +74,12 @@ export class BridgeService {
   }
 
   getAsset(label: string, packageName:string): Observable<string> {
-    return this.http.head("/assets/svgs/"+label.toLowerCase().replace(" ", "_")+".svg", { observe: 'response' }).pipe(
+    const l = label.toLowerCase().replaceAll(" ", "_")
+    console.log("app is", l)
+    return this.http.head("/assets/svgs/"+l+".svg", { observe: 'response' }).pipe(
       map(response => {
         // If the asset exists, return its path
-        return "/assets/svgs/"+label.toLowerCase()+".svg";
+        return "/assets/svgs/"+l+".svg";
       }),
       catchError(error => {
         // If the asset does not exist, return the default path
