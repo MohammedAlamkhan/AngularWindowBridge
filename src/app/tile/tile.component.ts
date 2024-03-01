@@ -7,6 +7,8 @@ import {
    bounceOutLeftAnimation,
 } from './../../assets/lib/'
 import { BrowserModule } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-tile',
   standalone: true,
@@ -24,6 +26,7 @@ export class TileComponent {
   @Input() content: string = '';
   @Input() iconName: string = '';
   @Input() launchPackage: string ='';
+  @Input() liveLink:string='';
   screenWidthUnit: number=0;
   iconUrl: string="";
   tileColor:any;
@@ -32,9 +35,10 @@ export class TileComponent {
   delay = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
 
   animationState = false;
+  safeLiveLink: any;
  
 
-  constructor(private bridgeService: BridgeService){
+  constructor(private bridgeService: BridgeService,private sanitizer: DomSanitizer){
    
     
    
@@ -56,6 +60,8 @@ export class TileComponent {
 
   async ngOnInit(): Promise<void> {
     this.iconUrl = `./../assets/svgs/${this.iconName}.svg`;
+    
+    this.safeLiveLink = this.sanitizer.bypassSecurityTrustResourceUrl(this.liveLink);
     this.animate();
   }
 

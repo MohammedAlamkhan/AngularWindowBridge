@@ -9,5 +9,9 @@
       <h2 *ngIf="title">{{ title }}</h2>
       <p *ngIf="content">{{ content }}</p>
     </div>
-  </div>
+
+    <div class="idiv" *ngIf="liveLink" >
+      <iframe class="ifame" [src]="safeLiveLink"></iframe>
+    </div>
+</div>
   

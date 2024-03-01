@@ -11,7 +11,6 @@ export class BridgeService {
   appList: any;
   constructor(private http: HttpClient) { 
     //window.Bridge = new BridgeMock();
-    // Bridge.showToast('Hello, world!');
     if(!localStorage.getItem("appList")){
       this.getFinalList();
     }
