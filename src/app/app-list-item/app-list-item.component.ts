@@ -21,8 +21,8 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   @Input() label: string | undefined;
   @Input() packageName: any;
 
-  duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
-  delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  duration = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
+  delay = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
   constructor(private bridgeService: BridgeService){
     
   }

@@ -28,8 +28,8 @@ export class TileComponent {
   iconUrl: string="";
   tileColor:any;
   tilePalette: any;
-  duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;;
-  delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;;
+  duration = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
+  delay = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
 
   animationState = false;
  
