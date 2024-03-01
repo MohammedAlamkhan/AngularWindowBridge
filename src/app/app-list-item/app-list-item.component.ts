@@ -41,7 +41,15 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
 
 
   ngAfterViewInit(){
+    let bg = "white";
+    if(localStorage.getItem("tileColor")){
+        bg= localStorage.getItem("tileColor")+"";
+    }else{
+      bg=localStorage.getItem("colorPalette")!.split(',')[Math.floor(Math.random() * (4 - 0 + 1)) + 0]
+    }
     document.getElementById(this.packageName)!.style.backgroundImage = "url("+this.imageSrc+")";
+    document.getElementById(this.packageName)!.style.backgroundColor =  bg;
+    document.getElementById(this.packageName)!.style.backgroundSize = "contain";
   }
 
 

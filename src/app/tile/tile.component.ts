@@ -55,7 +55,7 @@ export class TileComponent {
   }
 
   async ngOnInit(): Promise<void> {
-    this.iconUrl = `./../assets/icons/${this.iconName}.svg`;
+    this.iconUrl = `./../assets/svgs/${this.iconName}.svg`;
     this.animate();
   }
 

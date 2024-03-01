@@ -13,6 +13,7 @@
   
   .tile-content img {
     text-align: center;
-    max-width: 100%; /* Ensure the icon doesn't exceed the tile's width */
-    max-height: 100%; /* Ensure the icon doesn't exceed the tile's height */
+    max-width: 70%; /* Ensure the icon doesn't exceed the tile's width */
+    max-height: 70%; /* Ensure the icon doesn't exceed the tile's height */
+    padding-left: 15%; /* 100-width divided by 2*/
   }
