@@ -1,8 +1,17 @@
 
     <h1 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" data-tab="tab1" class="pivot">Applications</h1>
     <input [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
-<div *ngFor="let app of filteredAppList">
+<!-- <div *ngFor="let app of filteredAppList">
     <app-app-list-item  [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+</div> -->
+
+
+<div *ngFor="let letter of keys">
+    <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="letterFilter(letter)" [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="icontile">
+        <h2>{{ letter }}</h2>
+    </div>
+    
+    <div *ngFor="let app of filteredGroupedAppList[letter]">
+        <app-app-list-item [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+    </div>
 </div>
-
-

@@ -8,9 +8,10 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class BridgeService {
+  appListByAlphabet:any;
   appList: any;
   constructor(private http: HttpClient) { 
-    //window.Bridge = new BridgeMock();
+    window.Bridge = new BridgeMock();
     if(!localStorage.getItem("appList")){
       this.getFinalList();
     }
@@ -45,10 +46,6 @@ export class BridgeService {
    }
    
 
-
-    
-
-   
     
 
     console.log("beforeTimeoout", this.appList)
@@ -57,11 +54,29 @@ export class BridgeService {
    } 
  
 
+   groupAppsByAlphabet(apps: any[]) {
+    const groupedApps: {[key: string]: any[]} = {};
+
+    apps.forEach(app => {
+        const firstLetter = app.label.charAt(0).toUpperCase();
+        if (!groupedApps[firstLetter]) {
+            groupedApps[firstLetter] = [];
+        }
+        groupedApps[firstLetter].push(app);
+    });
+
+
+    
+    localStorage.setItem("appListByAlphabet", JSON.stringify(groupedApps));
+}
+
 
   setData(){
     console.log(this.appList, "now setting")
-    localStorage.setItem("appList", JSON.stringify(this.appList)) 
+    localStorage.setItem("appList", JSON.stringify(this.appList));
+    this.groupAppsByAlphabet(this.appList);
   }
+
   async getAppList(){
     let a = fetch(Bridge.getAppsURL())
     .then(resp => resp.json() as unknown as BridgeGetAppsResponse)

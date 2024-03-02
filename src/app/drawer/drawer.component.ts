@@ -23,10 +23,18 @@ export class DrawerComponent implements OnInit{
   
   duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
   delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  groupedApps: any;
+  keys: string[]=[];
+  filteredGroupedAppList: any;
+  originalKeys: string[]=[];
   constructor(private bridgeService: BridgeService){}
   async ngOnInit(): Promise<void> {
     this.appList = JSON.parse(localStorage.getItem("appList")+"");
+    this.groupedApps =  JSON.parse(localStorage.getItem("appListByAlphabet")+"")
+    this.keys= Object.keys(this.groupedApps)
+    this.originalKeys= this.keys;
     this.filteredAppList = this.appList
+    this.filteredGroupedAppList = this.groupedApps;
     this.animate();
   } 
 
@@ -34,6 +42,20 @@ export class DrawerComponent implements OnInit{
     await this.bridgeService.getIcon(packageName)
   }
 
+
+  letterFilter(letter:string){
+    if(this.keys[1]){
+      const t = this.filteredAppList[letter];
+      this.filteredAppList = {};
+      let key = letter
+      this.filteredAppList[key] = t;
+      this.keys = [letter]
+    }
+    else{
+      this.keys=this.originalKeys;
+    }
+   
+  }
   animationState = false;
   animate() {
     this.animationState = false;
@@ -44,20 +66,19 @@ export class DrawerComponent implements OnInit{
 
   
  searchApp($event: any) {
-  // If Backspace (keyCode 8) or Delete (keyCode 46) key is not pressed
-    this.filteredAppList = this.appList
-    const searchText = ($event.target as HTMLInputElement).value.toLowerCase();
-    const filteredApps = this.appList.filter((app: any) => app.label.toLowerCase().includes(searchText));
-    this.filteredAppList = filteredApps
-    // Now 'filteredApps' contains the filtered list of apps based on the search text
-    console.log(filteredApps); // You can do whatever you want with the filteredApps, e.g., assign it to a property for displaying in the UI
-    if ($event.keyCode === 13) {
-      this.bridgeService.launchApp(this.filteredAppList[0].packageName);
-      ($event.target as HTMLInputElement).value = ''; 
-      this.filteredAppList = this.appList
+    const searchString = ($event.target as HTMLInputElement).value.toLowerCase();
+    this.filteredGroupedAppList = {};
+
+    // Iterate over keys in groupedApps
+    for (let key in this.groupedApps) {
+        // Filter apps in each group based on search string
+        this.filteredGroupedAppList[key] = this.groupedApps[key].filter((app: any) => {
+            // You can adjust the condition based on your search criteria
+            return app.label.toLowerCase().includes(searchString.toLowerCase());
+            
+        });
     }
   
-}
-
+  }
 }
 
