@@ -19,16 +19,15 @@ const bounceInLeft = () =>
         '{{duration}}ms {{delay}}ms',
         keyframes([
   
-        style({ transform: 'rotateY(0deg) translateX(50px) translateZ(520px)', opacity: 1, easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)', offset: 0 }),
-        style({ transform: 'rotateY(' + ((!false) ? '-360deg' : '-80deg') + ') translateX(' + ((!false) ? '0px' : '0px') + ') translateZ(' + ((!false) ? '0px' : '0px') + ')', opacity: 1, easing: 'cubic-bezier(0.9, 0.9, 0.9, 1)', offset: 1 })
+        style({ transform: 'rotateY(-80deg) translateX(150px) translateZ(0px)', opacity: 1, easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)', offset: 0 }),
+        style({ transform: 'rotateY(0deg) translateX(0px) translateZ(-50px)', opacity: 1, easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)', offset: 1 })
         ])
       ),
       animate(
         '{{duration}}ms {{delay}}ms',
         keyframes([
-          style({ visibility: 'visible', opacity: 1, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0 }),
-          style({ opacity: 1, easing: 'cubic-bezier(0.15, 0.61, 0.355, 1)', offset: 0.6 }),
-          //style({ opacity: 0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 1 })
+          style({ visibility: 'visible', offset: 0 }),
+          style({ opacity: 1, offset: 0.6 }),
         ])
       )
     ])

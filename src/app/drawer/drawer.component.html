@@ -11,7 +11,7 @@
         <h2>{{ letter }}</h2>
     </div>
     
-    <div *ngFor="let app of filteredGroupedAppList[letter]">
-        <app-app-list-item [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+    <div *ngFor="let app of filteredGroupedAppList[letter]; let i = index">
+        <app-app-list-item [indexNo]= "i" [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
     </div>
 </div>

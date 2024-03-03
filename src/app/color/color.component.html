@@ -1,53 +1,53 @@
-<app-header [icon]="'&#xE771;'" [label]="'Colors'"></app-header>
-<div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="tiles-preview" >
+<app-header [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(1) } }"  [icon]="'&#xE771;'" [label]="'Colors'"></app-header>
+<div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(2) } }" class="tiles-preview" >
     <div [style.background-color]="screenColor" class="tiles-preview-inner"></div>
 </div>
-<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="colored">Choose a color</h2>
+<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(3) } }" class=" headingTop colored">Choose a color</h2>
 
 <div class="theme-overlay">
-    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="theme-color-wrapper">
+    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(4) } }" class="theme-color-wrapper">
         <div class="theme-color"  (click)="pickColor('#a4c400')" [style.background-color]="'#a4c400'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#60a917')" [style.background-color]="'#60a917'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#008a00')" [style.background-color]="'#008a00'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#00aba9')" [style.background-color]="'#00aba9'" style="opacity: 1;"></div>
     </div>
-    <div  [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="theme-color-wrapper">
+    <div  [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(5) } }" class="theme-color-wrapper">
         <div class="theme-color"  (click)="pickColor('#1ba1e2')" [style.background-color]="'#1ba1e2'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#0050ef')" [style.background-color]="'#0050ef'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#6a00ff')" [style.background-color]="'#6a00ff'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#aa00ff')" [style.background-color]="'#aa00ff'" style="opacity: 1;"></div>
     </div>
-    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="theme-color-wrapper">
+    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(6) } }" class="theme-color-wrapper">
         <div class="theme-color"  (click)="pickColor('#f472d0')" [style.background-color]="'#f472d0'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#d80073')" [style.background-color]="'#d80073'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#a20025')" [style.background-color]="'#a20025'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#e51400')" [style.background-color]="'#e51400'" style="opacity: 1;"></div>
     </div>
-    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="theme-color-wrapper">
+    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(7) } }" class="theme-color-wrapper">
         <div class="theme-color"  (click)="pickColor('#fa6800')" [style.background-color]="'#fa6800'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#f0a30a')" [style.background-color]="'#f0a30a'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#e3c800')" [style.background-color]="'#e3c800'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#825a2c')" [style.background-color]="'#825a2c'" style="opacity: 1;"></div>
     </div>
-    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="theme-color-wrapper">
+    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(8) } }" class="theme-color-wrapper">
         <div class="theme-color"  (click)="pickColor('#6d8764')" [style.background-color]="'#6d8764'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#647687')" [style.background-color]="'#647687'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#76608a')" [style.background-color]="'#76608a'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#87794e')" [style.background-color]="'#87794e'" style="opacity: 1;"></div>
     </div>
-    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="theme-color-wrapper">
+    <div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(9) } }" class="theme-color-wrapper">
         <div class="theme-color"  (click)="pickColor('#00fa6e')" [style.background-color]="'#00fa6e'" style="opacity: 1;"></div>
         <div class="theme-color"  (click)="pickColor('#4800b8')" [style.background-color]="'#4800b8'" style="opacity: 1;"></div>
     </div>
 </div>
 
-<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="colored">Add custom color</h2>
-<input [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" (keydown)="customColor($event)" class="colorbox" type="text" placeholder="Text">
+<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(10) } }" class="colored">Add custom color</h2>
+<input [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(11) } }" (keydown)="customColor($event)" class="colorbox" type="text" placeholder="Text">
 
 
-<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }" class="colored">Choose a pallete</h2>
+<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(12) } }" class="colored">Choose a pallete</h2>
 
-<div [@bounceInLeft]="{ value: animationState, params: { 'duration': randomVal(), 'delay': randomVal() } }"  *ngFor="let cp of colorPalettes" (click)="selectedPalette(cp)"  class="palette">
+<div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(13) } }"  *ngFor="let cp of colorPalettes" (click)="selectedPalette(cp)"  class="palette">
     <div class="color" [style.background-color]="cp.colors[0]"></div>
     <div class="color" [style.background-color]="cp.colors[1]"></div>
     <div class="color" [style.background-color]="cp.colors[2]"></div>

@@ -21,8 +21,8 @@ export class DrawerComponent implements OnInit{
   filteredAppList: any;
   appList:any
   
-  duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
-  delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  duration = 500;
+  delay = 25;
   groupedApps: any;
   keys: string[]=[];
   filteredGroupedAppList: any;

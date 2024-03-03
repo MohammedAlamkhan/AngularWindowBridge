@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { BridgeService } from '../bridge.service';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { 
@@ -27,12 +27,14 @@ export class TileComponent {
   @Input() iconName: string = '';
   @Input() launchPackage: string ='';
   @Input() liveLink:string='';
+  @Input() indexVal:number=0;
+
   screenWidthUnit: number=0;
   iconUrl: string="";
   tileColor:any;
   tilePalette: any;
-  duration = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
-  delay = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
+  duration = 500;
+  delay = 0;
 
   animationState = false;
   safeLiveLink: any;
@@ -59,6 +61,7 @@ export class TileComponent {
   }
 
   async ngOnInit(): Promise<void> {
+    this.delay = this.indexVal*25; 
     this.iconUrl = `./../assets/svgs/${this.iconName}.svg`;
     
     this.safeLiveLink = this.sanitizer.bypassSecurityTrustResourceUrl(this.liveLink);

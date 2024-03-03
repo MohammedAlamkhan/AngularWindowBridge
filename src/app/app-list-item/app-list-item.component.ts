@@ -20,15 +20,18 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   @Input() imageSrc!: string;
   @Input() label: string | undefined;
   @Input() packageName: any;
+  @Input() indexNo!: number;
 
-  duration = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
-  delay = Math.floor(Math.random() * (1000 - 700 + 1)) + 700;
+  duration = 500;
+  delay = 0;
   constructor(private bridgeService: BridgeService){
     
   }
   ngOnInit(): void {
     this.animate();
+    this.delay = (this.indexNo+1)*25;
   }
+
  
   
   animationState = false;

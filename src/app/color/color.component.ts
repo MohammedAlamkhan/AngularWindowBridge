@@ -19,7 +19,7 @@ import {
 export class ColorComponent implements OnInit{
   selectedColor: any;
   screenColor="white";
-  duration = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  duration = 500;
   delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
   colorPalettes = [
     { label: "Melon high", colors: ["#f0fff0", "#f0fff1", "#f0fff5", "#f0fff7", "#f0fff9"] },
@@ -56,8 +56,8 @@ export class ColorComponent implements OnInit{
     }, 1);
   }
 
-  randomVal(){
-    return Math.floor(Math.random() * (800 - 200 + 1)) + 200;
+  getVal(i:number){
+    return i*25;
   }
 
 
