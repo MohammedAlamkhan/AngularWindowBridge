@@ -4,7 +4,10 @@ import {DrawerComponent} from './drawer/drawer.component'
 import { ColorComponent } from './color/color.component';
 export const routes: Routes = [
     {
-        path:'', title:'Home', component:HomeComponent
+        path:'', title:'home', component:HomeComponent
+    },
+    {
+        path:'home', title:'home', component:HomeComponent
     },
     {
         path:"drawer", title:'drawer', component:DrawerComponent

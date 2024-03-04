@@ -33,15 +33,20 @@ export class TileComponent {
   iconUrl: string="";
   tileColor:any;
   tilePalette: any;
-  duration = 500;
+  duration = 400;
   delay = 0;
 
   animationState = false;
   safeLiveLink: any;
+  color: any;
  
 
   constructor(private bridgeService: BridgeService,private sanitizer: DomSanitizer){
    
+  }
+
+  async ngOnInit(): Promise<void> {
+    console.log("tiles readying")
     
    
     if(localStorage.getItem("tileColor")){
@@ -58,10 +63,8 @@ export class TileComponent {
       this.tilePalette = null;
     }
     
-  }
-
-  async ngOnInit(): Promise<void> {
-    this.delay = this.indexVal*25; 
+    this.color = this.getTileColor();
+    this.delay = (this.indexVal+1)*10;
     this.iconUrl = `./../assets/svgs/${this.iconName}.svg`;
     
     this.safeLiveLink = this.sanitizer.bypassSecurityTrustResourceUrl(this.liveLink);

@@ -2,13 +2,14 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { RouterOutlet,  Router } from '@angular/router';
 import {CommonModule} from "@angular/common"
 import { TileComponent } from '../tile/tile.component';
+import { BasicDirective } from '../basic.directive';
 
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, TileComponent],
+  imports: [RouterOutlet, CommonModule, TileComponent, BasicDirective],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -27,6 +28,6 @@ export class HomeComponent implements OnInit{
     this.router.navigate([route])
   }
 
-
+ 
 }
 

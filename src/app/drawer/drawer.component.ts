@@ -6,10 +6,12 @@ import {
   bounceInLeftAnimation,
    bounceOutLeftAnimation,
 } from './../../assets/lib/'
+import { BasicDirective } from '../basic.directive';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-drawer',
   standalone: true,
-  imports: [CommonModule, AppListItemComponent],
+  imports: [CommonModule, AppListItemComponent, BasicDirective],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.css',
   animations: [
@@ -27,7 +29,7 @@ export class DrawerComponent implements OnInit{
   keys: string[]=[];
   filteredGroupedAppList: any;
   originalKeys: string[]=[];
-  constructor(private bridgeService: BridgeService){}
+  constructor(private bridgeService: BridgeService,  private router: Router){}
   async ngOnInit(): Promise<void> {
     this.appList = JSON.parse(localStorage.getItem("appList")+"");
     this.groupedApps =  JSON.parse(localStorage.getItem("appListByAlphabet")+"")
@@ -63,6 +65,12 @@ export class DrawerComponent implements OnInit{
       this.animationState = true;
     }, 1);
   }
+
+  
+  launchRouter(route:any){
+    this.router.navigate([route])
+  }
+
 
   
  searchApp($event: any) {

@@ -1,4 +1,4 @@
-
+<div appBasicDirective (swipeRight)="launchRouter('/home')">
     <h1 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" data-tab="tab1" class="pivot">Applications</h1>
     <input [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
 <!-- <div *ngFor="let app of filteredAppList">
@@ -14,4 +14,5 @@
     <div *ngFor="let app of filteredGroupedAppList[letter]; let i = index">
         <app-app-list-item [indexNo]= "i" [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
     </div>
+</div>
 </div>
