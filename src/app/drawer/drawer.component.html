@@ -6,13 +6,16 @@
 </div> -->
 
 
-<div *ngFor="let letter of keys">
-    <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="letterFilter(letter)" [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="icontile">
-        <h2>{{ letter }}</h2>
+    <div  *ngFor="let letter of keys">
+       <div class="letterBoxContainer">
+        <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="letterFilter(letter)" [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="icontile">
+            <h2>{{ letter }}</h2>
+        </div>
+       </div>
+        
+        <div *ngFor="let app of filteredGroupedAppList[letter]; let i = index">
+            <app-app-list-item [indexNo]= "i" [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+        </div>
+    </div>
     </div>
     
-    <div *ngFor="let app of filteredGroupedAppList[letter]; let i = index">
-        <app-app-list-item [indexNo]= "i" [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
-    </div>
-</div>
-</div>
