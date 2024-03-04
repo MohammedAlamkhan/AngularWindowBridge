@@ -11,7 +11,7 @@ export class BridgeService {
   appListByAlphabet:any;
   appList: any;
   constructor(private http: HttpClient) { 
-    //window.Bridge = new BridgeMock();
+    window.Bridge = new BridgeMock();
     if(!localStorage.getItem("appList")){
       this.getFinalList();
     }

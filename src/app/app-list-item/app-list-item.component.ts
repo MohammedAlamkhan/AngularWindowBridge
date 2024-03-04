@@ -4,6 +4,7 @@ import {
   bounceInLeftAnimation,
    bounceOutLeftAnimation,
 } from './../../assets/lib/'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-app-list-item',
   standalone: true,
@@ -24,7 +25,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
 
   duration = 500;
   delay = 0;
-  constructor(private bridgeService: BridgeService){
+  constructor(private bridgeService: BridgeService, private router: Router){
     
   }
   ngOnInit(): void {
@@ -56,8 +57,16 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   }
 
 
+  launchRouter(p:string){
+    this.router.navigate([p])
+  }
+
 
   launch(packageName: string){
-   this.bridgeService.launchApp(packageName);
+    this.launchRouter('./launch');
+    setTimeout(() => {
+      this.bridgeService.launchApp(packageName);
+    }, 1000);
+    
   }
 }

@@ -8,6 +8,7 @@ import {
 } from './../../assets/lib/'
 import { BrowserModule } from '@angular/platform-browser';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tile',
@@ -41,7 +42,7 @@ export class TileComponent {
   color: any;
  
 
-  constructor(private bridgeService: BridgeService,private sanitizer: DomSanitizer){
+  constructor(private bridgeService: BridgeService,private sanitizer: DomSanitizer,private router:Router){
    
   }
 
@@ -119,12 +120,24 @@ export class TileComponent {
   }
 
   launchApp(){
-    console.log("clicked")
+
     if(this.launchPackage){
+      this.launchRouter('./launch');
+      setTimeout(() => {
+       
+          this.bridgeService.launchApp(this.launchPackage);
+        
+      }, 1000);
       
-      this.bridgeService.launchApp(this.launchPackage);
+
     }
+   
   }
+
+  launchRouter(p:string){
+    this.router.navigate([p])
+  }
+
 
   getTileColor(){
     if(this.tilePalette){
