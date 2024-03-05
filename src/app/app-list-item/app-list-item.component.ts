@@ -30,7 +30,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   }
   ngOnInit(): void {
     this.animate();
-    this.delay = (this.indexNo+1)*25;
+    this.delay = (this.indexNo+1)*20 < 100 ? (this.indexNo+1)*25 : 100;
   }
 
  
