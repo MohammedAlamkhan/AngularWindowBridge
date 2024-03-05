@@ -18,6 +18,9 @@ export class LaunchpadComponent implements OnInit {
   duration = 800;
   delay = 0;
   animationState = false;
+  screenWidthUnit: string="";
+  screenHeightUnit: string="";
+  border: string="";
 
 
   constructor(private router: Router){
@@ -25,6 +28,9 @@ export class LaunchpadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.screenWidthUnit = window.innerWidth*0.98+"px";
+    this.screenHeightUnit = window.innerHeight+"px";
+    this.border = 0.01*window.innerWidth + "px solid white";
     this.animate();
 
     setTimeout(() => {

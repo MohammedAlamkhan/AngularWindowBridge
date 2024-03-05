@@ -6,12 +6,12 @@ import {
   bounceInLeftAnimation,
    bounceOutLeftAnimation,
 } from './../../assets/lib/'
-import { BasicDirective } from '../basic.directive';
+import { swipeDirective } from '../swipe.directive';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-drawer',
   standalone: true,
-  imports: [CommonModule, AppListItemComponent, BasicDirective],
+  imports: [CommonModule, AppListItemComponent, swipeDirective],
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.css',
   animations: [

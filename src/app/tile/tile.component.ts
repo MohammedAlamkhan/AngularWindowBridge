@@ -127,7 +127,7 @@ export class TileComponent {
        
           this.bridgeService.launchApp(this.launchPackage);
         
-      }, 1000);
+      }, 400);
       
 
     }

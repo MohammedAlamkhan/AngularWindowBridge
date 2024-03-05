@@ -23,7 +23,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   @Input() packageName: any;
   @Input() indexNo!: number;
 
-  duration = 500;
+  duration = 400;
   delay = 0;
   constructor(private bridgeService: BridgeService, private router: Router){
     
@@ -66,7 +66,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
     this.launchRouter('./launch');
     setTimeout(() => {
       this.bridgeService.launchApp(packageName);
-    }, 1000);
+    }, 400);
     
   }
 }

@@ -1,4 +1,4 @@
-<div class="topdiv" appBasicDirective (swipeLeft)="launchRouter('/drawer')" >
+<div class="topdiv" appswipeDirective (swipeLeft)="launchRouter('/drawer')" >
    <div class="container">
       <div class="sub-container">
     
@@ -21,7 +21,7 @@
          <app-tile [indexVal]="7" (click)="launchRouter('/color')" size="normal" [launchPackage]="''"   [iconName]="'paintbrush'"></app-tile>
       </div>
     </div>
-     <app-tile [indexVal]="8" size="small" [launchPackage]="'com.nononsenseapp.feeder.play'"   [iconName]="'feeder'"></app-tile>
+     <app-tile [indexVal]="8" size="small" [launchPackage]="'com.nononsenseapps.feeder.play'"   [iconName]="'feeder'"></app-tile>
      <app-tile [indexVal]="9" size="small" [launchPackage]="'nl.viter.glider'"   [iconName]="'glider'"></app-tile>
      <app-tile [indexVal]="10" size="small" [launchPackage]="'com.google.android.youtube'"   [iconName]="'youtube'"></app-tile>
      <app-tile [indexVal]="11" size="small" [launchPackage]="'com.google.android.apps.youtube.music'"   [iconName]="'ytmusic'"></app-tile>

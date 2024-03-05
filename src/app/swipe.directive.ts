@@ -1,18 +1,18 @@
-// basic.directive.ts
+// swipe.directive.ts
 
 import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 @Directive({
-  selector: '[appBasicDirective]', standalone:true
+  selector: '[appswipeDirective]', standalone:true
 })
-export class BasicDirective {
+export class swipeDirective {
 
   constructor(private el: ElementRef) { }
   private startX?: number;
   private startY?: number;
   private currentX?: number;
   private currentY?: number;
-  private threshold: number = 150; // Adjust this to change sensitivity
+  private threshold: number = 100; // Adjust this to change sensitivity
 
 
   @Output() swipeLeft = new EventEmitter<void>();
