@@ -24,7 +24,7 @@ export class DrawerComponent implements OnInit{
   appList:any
   
   duration = 500;
-  delay = 25;
+  delay = 100;
   groupedApps: any;
   keys: string[]=[];
   filteredGroupedAppList: any;

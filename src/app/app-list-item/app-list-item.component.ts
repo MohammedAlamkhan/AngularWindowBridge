@@ -66,7 +66,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
     this.launchRouter('./launch');
     setTimeout(() => {
       this.bridgeService.launchApp(packageName);
-    }, 400);
+    }, 450);
     
   }
 }

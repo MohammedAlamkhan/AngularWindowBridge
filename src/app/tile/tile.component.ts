@@ -40,6 +40,7 @@ export class TileComponent {
   animationState = false;
   safeLiveLink: any;
   color: any;
+  sizeSpecs: any;
  
 
   constructor(private bridgeService: BridgeService,private sanitizer: DomSanitizer,private router:Router){
@@ -47,7 +48,6 @@ export class TileComponent {
   }
 
   async ngOnInit(): Promise<void> {
-    console.log("tiles readying")
     
    
     if(localStorage.getItem("tileColor")){
@@ -63,6 +63,10 @@ export class TileComponent {
       localStorage.setItem('tileColor', "white");
       this.tilePalette = null;
     }
+   
+    this.sizeSpecs =  JSON.parse(localStorage.getItem("sizeChart")+"")[this.size];
+   
+    
     
     this.color = this.getTileColor();
     this.delay = (this.indexVal+1)*10 < 100 ? (this.indexVal+1)*10 : 100;
@@ -81,44 +85,6 @@ export class TileComponent {
   }
  
 
-  calculateTileDimensions(): { width: string; height: string, border:string } {
-    this.screenWidthUnit = window.innerWidth/1200;
-    const width = this.getTileWidth() + 'px';
-    const height = this.getTileHeight() + 'px';
-    const border = 5*this.screenWidthUnit+'px';
-    return { width, height, border };
-  }
-
-  private getTileWidth(): number {
-    switch (this.size) {
-      case 'small':
-        return 290*this.screenWidthUnit; // Aspect ratio maintained
-      case 'normal':
-        return 590*this.screenWidthUnit; // Aspect ratio maintained
-      case 'wide':
-        return 1190*this.screenWidthUnit; // Aspect ratio maintained
-      case 'large':
-        return 1190*this.screenWidthUnit; // Aspect ratio maintained
-      default:
-        return 590*this.screenWidthUnit; // Default to normal size
-    }
-  }
-
-  private getTileHeight(): number {
-    switch (this.size) {
-      case 'small':
-        return 290*this.screenWidthUnit; // Aspect ratio maintained
-      case 'normal':
-        return 590*this.screenWidthUnit; // Aspect ratio maintained
-      case 'wide':
-        return 560*this.screenWidthUnit; // Aspect ratio maintained
-      case 'large':
-        return 1190*this.screenWidthUnit; // Aspect ratio maintained
-      default:
-        return 590*this.screenWidthUnit; // Default to normal size
-    }
-  }
-
   launchApp(){
 
     if(this.launchPackage){
@@ -127,7 +93,7 @@ export class TileComponent {
        
           this.bridgeService.launchApp(this.launchPackage);
         
-      }, 400);
+      }, 450);
       
 
     }
