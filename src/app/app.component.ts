@@ -25,6 +25,10 @@ export class AppComponent implements OnInit{
           const a = this.calculateTileDimensions(element);
           this.sizeChart[element] = a;
         });
+      const w = window.innerWidth*0.98+"px";
+      const h = window.innerHeight+"px";
+      const b = 0.01*window.innerWidth + "px solid white";
+      this.sizeChart["launcher"] = {"width":w,"height":h,"border":b};
       console.log(this.sizeChart)
       localStorage.setItem("sizeChart",JSON.stringify(this.sizeChart))
       }

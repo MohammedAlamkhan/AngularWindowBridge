@@ -3,6 +3,7 @@ import { RouterOutlet,  Router } from '@angular/router';
 import {CommonModule} from "@angular/common"
 import { TileComponent } from '../tile/tile.component';
 import { swipeDirective } from '../swipe.directive';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -16,12 +17,16 @@ import { swipeDirective } from '../swipe.directive';
 
 export class HomeComponent implements OnInit{
   applist: any;
+  tilesData: any[] = [];
   constructor(
-    private router: Router){
+    private router: Router,
+    private http: HttpClient){
 
     }
   async ngOnInit(): Promise<void> {
-    
+    this.http.get<any[]>('/assets/tiles.json').subscribe(data => {
+      this.tilesData = data;
+    });
   }
 
   launchRouter(route:any){

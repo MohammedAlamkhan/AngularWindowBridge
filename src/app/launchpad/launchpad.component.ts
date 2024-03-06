@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { 
   bounceInLeftAnimation
 } from './../../assets/lib/'
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-launchpad',
@@ -21,21 +21,26 @@ export class LaunchpadComponent implements OnInit {
   screenWidthUnit: string="";
   screenHeightUnit: string="";
   border: string="";
+  spec: any;
+  imageSrc: any;
 
 
-  constructor(private router: Router){
+  constructor(private router: Router, private route: ActivatedRoute){
 
   }
 
-  ngOnInit(): void {
-    this.screenWidthUnit = window.innerWidth*0.98+"px";
-    this.screenHeightUnit = window.innerHeight+"px";
-    this.border = 0.01*window.innerWidth + "px solid white";
+  ngOnInit(): void { 
+    this.spec = JSON.parse(localStorage.getItem('sizeChart')+"")["launcher"];
+    this.route.queryParams.subscribe(params => {
+      this.imageSrc = params["appSrc"];
+    });
+  
+   
     this.animate();
 
     setTimeout(() => {
       this.launchRouter();
-    }, 1000);
+    }, 900);
   }
 
   launchRouter(){

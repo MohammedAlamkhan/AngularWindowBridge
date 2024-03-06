@@ -23,7 +23,6 @@ export class swipeDirective {
   
   // Example of adding a border when the mouse enters the element
   @HostListener('touchstart', ['$event']) onTouchStart(event: TouchEvent) {
-    console.log("touchstart", event)
     if (event instanceof TouchEvent) {
         this.startX = event.touches[0].clientX;
         this.startY = event.touches[0].clientY;
@@ -31,7 +30,6 @@ export class swipeDirective {
   }
 
   @HostListener('touchmove', ['$event']) onTouchMove(event: TouchEvent) {
-    console.log("touchmove", event)
     if (event instanceof TouchEvent) {
         this.currentX = event.touches[0].clientX;
         this.currentY = event.touches[0].clientY;
@@ -39,24 +37,19 @@ export class swipeDirective {
   }
 
   @HostListener('touchend', ['$event']) onTouchEnd(event: TouchEvent) {
-    console.log("touchend", event)
     if(this.currentX && this.startX && this.currentY && this.startY){
         if (Math.abs(this.currentX - this.startX) > Math.abs(this.currentY - this.startY)) {
           if (this.currentX > this.startX && Math.abs(this.currentX - this.startX) > this.threshold) {
-            console.log('Swiped Right');
             this.swipeRight.emit();
           } else if (this.currentX < this.startX && Math.abs(this.currentX - this.startX) > this.threshold) {
-            console.log('Swiped Left');
             this.swipeLeft.emit();
             
            
           }
         } else {
           if (this.currentY > this.startY && Math.abs(this.currentY - this.startY) > this.threshold) {
-            console.log('Swiped Down');
             this.swipeDown.emit();
           } else if (this.currentY < this.startY && Math.abs(this.currentY - this.startY) > this.threshold) {
-            console.log('Swiped Up');
             this.swipeUp.emit();
           }
         }

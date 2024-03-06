@@ -30,7 +30,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   }
   ngOnInit(): void {
     this.animate();
-    this.delay = (this.indexNo+1)*20 < 100 ? (this.indexNo+1)*25 : 100;
+    this.delay = (this.indexNo+1)*30 < 1000 ? (this.indexNo+1)*30 : 1000;
   }
 
  
@@ -58,7 +58,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
 
 
   launchRouter(p:string){
-    this.router.navigate([p])
+    this.router.navigate([p], { queryParams: { appSrc: this.imageSrc } })
   }
 
 
