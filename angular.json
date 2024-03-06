@@ -23,7 +23,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/mock"
+              "src/mock",
+              "src/assets/livetiles",
+              "src/assets/img/gallery"
             ],
             "styles": [
               "src/styles.css"
@@ -83,7 +85,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/mock"
+              "src/mock",
+              "src/assets/livetiles",
+              "src/assets/img/gallery"
             ],
             "styles": [
               "src/styles.css"
