@@ -1,0 +1,54 @@
+<body onLoad="initClock()">
+    <script>
+        // START CLOCK SCRIPT
+
+        Number.prototype.pad = function (n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function updateClock() {
+            var now = new Date();
+            var
+                min = now.getMinutes(),
+                hou = now.getHours(),
+                mo = now.getMonth(),
+                dy = now.getDate(),
+                yr = now.getFullYear();
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var tags = ["mon", "d", "y", "h", "m", "s", "mi"],
+                corr = [months[mo], dy, yr, hou.pad(2), min.pad(2)];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+        }
+
+        function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 60000);
+        }
+
+        // END CLOCK SCRIPT</script>
+    <style>
+        body {
+            background-color: transparent;
+            
+            margin:0px;
+        }
+
+        #timedate {
+            font-family: "Segoe UI";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 50px;
+            text-align: left;
+            width: 100%;
+            color: black;
+        }
+    </style>
+    <div id="timedate">
+        <a id="mon">January</a>
+        <a id="d">1</a>,
+        <a id="y">0</a><br />
+        <a id="h">12</a> :
+        <a id="m">00</a>
+    </div>

@@ -18,7 +18,7 @@
           { "indexVal": 29, "size": "normal", "liveLink": "/assets/livetiles/gallery.html" }
         ],
         [
-          { "indexVal": 7, "size": "normal", "launchPackage": "", "iconName": "paintbrush", "clickAction": "/color" }
+          { "indexVal": 29, "size": "normal", "liveLink": "/assets/livetiles/clock.html" }
         ]
       ]
     },
@@ -79,7 +79,19 @@
         ],
         [
             { "indexVal": 27, "size": "small", "launchPackage": "com.android.chrome", "iconName": "chrome" },
-            { "indexVal": 6, "size": "small", "launchPackage": "com.sec.android.app.camera", "iconName": "camera"}
+            { "indexVal": 28, "size": "small", "launchPackage": "com.sec.android.app.camera", "iconName": "camera"}
+        ]
+      ]
+    }
+    ,
+   
+    {
+      "subContainers": [
+        [
+          { "indexVal": 7, "size": "normal", "launchPackage": "", "iconName": "paintbrush", "clickAction": "/color" }
+        ],
+        [
+            { "indexVal": 27, "size": "telegram", "launchPackage": "org.telegram.messenger", "iconName": "chrome" }
         ]
       ]
     }
