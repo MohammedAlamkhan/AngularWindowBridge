@@ -1,4 +1,4 @@
-<div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (click)="launch(packageName)" class="app-list-item">
+<div appswipeDirective (longPress)="popUp('test')" [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (click)="launch(packageName)" class="app-list-item">
     <div [attr.id]="packageName" class="icontile">
 
     </div>
@@ -6,3 +6,12 @@
     <span>{{ label }}</span>
 </div>
   
+<app-flyover *ngIf="showFlyover" (optionSelected)="performAction($event)" [options]="['uninstall','app info']">
+
+</app-flyover>
+
+<app-popover *ngIf="showPopup"  [title]="'Uninstall app?'"  [content]="'This app will be permanently deleted from this Phone'"
+    (okClicked)="requestUninstall()" (cancelClicked)="closePopUp()"
+>
+
+</app-popover> 

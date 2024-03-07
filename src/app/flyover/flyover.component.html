@@ -1,6 +1,5 @@
 <div class="popover html" id="1709103666243" style="top: 409px; height: 97px;">
-    <div class="context-content">
-        <p>{{title}}</p>
-        <button>{{content}}</button>
+    <div *ngFor="let content of options; let i=index" class="context-content">
+        <button (click)="ok(content)">{{content}}</button>
     </div>
 <div class="buttons"></div></div>

@@ -86,7 +86,15 @@ export class BridgeService {
   launchApp(packageName: string){
     Bridge.requestLaunchApp(packageName)
   }
-
+  uninstallApp(packageName: string){
+    Bridge.requestAppUninstall(packageName, true)
+    localStorage.removeItem("appList");
+    localStorage.removeItem("appListByAlphabet");
+    this.getFinalList();
+  }
+  launchAppInfo(packageName: string){
+    Bridge.requestOpenAppInfo(packageName, true)
+  }
   getAsset(label: string, packageName:string): Observable<string> {
     const l = label.toLowerCase().replaceAll(" ", "_")
     console.log("app is", l)

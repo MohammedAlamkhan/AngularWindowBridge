@@ -1,20 +1,21 @@
+import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'app-flyover',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './flyover.component.html',
   styleUrl: './flyover.component.css'
 })
 export class FlyoverComponent {
-  @Input() title: string | undefined;
-  @Input() content: string | undefined;
-  @Output() okClicked: EventEmitter<void> = new EventEmitter<void>();
+  @Input() options!: string[];
+  @Output() optionSelected: EventEmitter<string> = new EventEmitter<string>();
 
   
-  ok(){
-    this.okClicked.emit();
+  ok(content:string){
+    console.log(content)
+    this.optionSelected.emit(content);
   }
 
 }

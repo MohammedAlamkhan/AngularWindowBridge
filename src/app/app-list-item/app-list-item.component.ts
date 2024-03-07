@@ -5,10 +5,14 @@ import {
    bounceOutLeftAnimation,
 } from './../../assets/lib/'
 import { Router } from '@angular/router';
+import { swipeDirective } from '../swipe.directive';
+import { FlyoverComponent } from '../flyover/flyover.component';
+import { CommonModule } from '@angular/common';
+import { PopoverComponent } from '../popover/popover.component';
 @Component({
   selector: 'app-app-list-item',
   standalone: true,
-  imports: [],
+  imports: [swipeDirective,  FlyoverComponent, CommonModule, PopoverComponent],
   templateUrl: './app-list-item.component.html',
   styleUrl: './app-list-item.component.css',
   animations: [
@@ -25,6 +29,8 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
 
   duration = 400;
   delay = 0;
+  showFlyover: boolean = false;
+  showPopup: boolean=false;
   constructor(private bridgeService: BridgeService, private router: Router){
     
   }
@@ -68,5 +74,31 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
       this.bridgeService.launchApp(packageName);
     }, 450);
     
+  }
+
+  popUp(t:any){
+    this.showFlyover = true;
+    console.log(t)
+  }
+
+  performAction($event: any){
+    this.showFlyover = false;
+    if($event == "app info"){
+        this.bridgeService.launchAppInfo(this.packageName)
+    }
+    
+    if($event == "uninstall"){
+      this.showPopup=true;
+    }
+    
+  }
+
+  requestUninstall(){
+    this.showPopup=false;
+    this.bridgeService.uninstallApp(this.packageName)
+  }
+
+  closePopUp(){
+    this.showPopup=false;
   }
 }
