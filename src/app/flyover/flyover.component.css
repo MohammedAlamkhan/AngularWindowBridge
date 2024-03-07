@@ -10,6 +10,8 @@ div.popover {
 	color: #000;
 	overflow: hidden;
 	pointer-events: all;
+    animation: grow 0.5s forwards;
+
 	
 	&.html {
 		div.context-content {
@@ -52,3 +54,18 @@ div.popover {
 		}
 	}
 }
+
+@keyframes grow {
+    0% {
+      height: 0;
+      width:100%;
+    }
+    50% {
+      height: 1%;
+      width:100%;
+    }
+    100% {
+      height: 100px; /* Change this to the desired final height */
+      width:100%;
+    }
+  }

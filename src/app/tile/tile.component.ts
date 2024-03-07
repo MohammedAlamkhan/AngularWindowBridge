@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, input } from '@angular/core';
 import { BridgeService } from '../bridge.service';
-import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { 
   bounceInLeftAnimation,
    bounceOutLeftAnimation,

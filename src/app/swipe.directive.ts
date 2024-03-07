@@ -14,7 +14,7 @@ export class swipeDirective {
   private currentY?: number;
   private threshold: number = 100; // Adjust this to change sensitivity
   private longPressTimeout: any;
-  private longPressDuration: number = 500; 
+  private longPressDuration: number = 300; 
 
   @Output() swipeLeft = new EventEmitter<void>();
   @Output() swipeRight = new EventEmitter<void>();
