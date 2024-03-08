@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import {CommonModule} from "@angular/common"
 import { HomeComponent } from './home/home.component';
 import { DrawerComponent } from './drawer/drawer.component';
@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   screenWidthUnit: number=0;
   tileTypes = ['small','normal', 'wide', 'large'];
   sizeChart:any={};
+  constructor(  private router: Router){}
   async ngOnInit(): Promise<void> {
 
       if(!localStorage.getItem("sizeChart")){
@@ -75,4 +76,20 @@ export class AppComponent implements OnInit{
     }
   }
 
+  launchRouter(route:any){
+    this.router.navigate([route])
+  }
+
+
+
+  backClicked(){
+    this.launchRouter('/home')
+  }
+  homeClicked(){
+    this.launchRouter('/home')
+  }
+  searchClicked(){
+    this.launchRouter('/drawer')
+  }
+  taskClicked(){}
 }
