@@ -18,6 +18,10 @@ import { HttpClient } from '@angular/common/http';
 export class HomeComponent implements OnInit{
   applist: any;
   tilesData: any[] = [];
+  showUrlTile: boolean=false;
+  size:'small' | 'normal' | 'wide' | 'large' = 'large'
+  urlData = { "indexVal": 1, "size": this.size, "liveLink": 'test' };
+  url: string ="";
   constructor(
     private router: Router,
     private http: HttpClient){
@@ -27,12 +31,25 @@ export class HomeComponent implements OnInit{
     this.http.get<any[]>('/assets/tiles.json').subscribe(data => {
       this.tilesData = data;
     });
+    this.monitorUrl();
   }
 
   launchRouter(route:any){
     this.router.navigate([route])
   }
 
- 
+ monitorUrl(){
+  if(localStorage.getItem("monitorUrl")){
+    this.url =localStorage.getItem("monitorUrl")+"";
+    this.showUrlTile = true;
+  }else{
+    this.showUrlTile=false;
+  }
+ }
+
+ getMonitorData(){
+  this.urlData = { "indexVal": 1, "size": "large", "liveLink": this.url+"" }
+  return this.urlData;
+ }
 }
 

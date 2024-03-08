@@ -54,3 +54,6 @@
     <div class="color" [style.background-color]="cp.colors[3]"></div>
     <div class="color" [style.background-color]="cp.colors[4]"></div>
 </div>    
+
+<h2 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(10) } }" class="colored">Add a URL tile on homescreen</h2>
+<input [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': getVal(11) } }" (keydown)="customUrl($event)" class="bot colorbox" type="text" placeholder="Text">

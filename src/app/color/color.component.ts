@@ -73,6 +73,11 @@ export class ColorComponent implements OnInit{
     this.pickColor(color);
   }
 
+  customUrl($event:any){
+    const url = ($event.target as HTMLInputElement).value.toLowerCase();
+    localStorage.setItem("monitorUrl",url)
+  }
+
   selectedPalette(cp:any){
     const palette = cp.colors;
     this.screenColor = cp.colors[0];
