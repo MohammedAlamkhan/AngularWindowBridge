@@ -14,7 +14,7 @@
   
   .tile-content img {
     
-    filter: invert(100%) sepia(13%) saturate(7467%) hue-rotate(180deg) brightness(106%) contrast(106%); /* make svg white*/
+    /*filter: invert(100%) sepia(13%) saturate(7467%) hue-rotate(180deg) brightness(106%) contrast(106%);  make svg white*/
     text-align: center;
     max-width: 80%; /* Ensure the icon doesn't exceed the tile's width */
     max-height: 80%; /* Ensure the icon doesn't exceed the tile's height */

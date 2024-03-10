@@ -22,6 +22,9 @@ export class HomeComponent implements OnInit{
   size:'small' | 'normal' | 'wide' | 'large' = 'large'
   urlData = { "indexVal": 1, "size": this.size, "liveLink": 'test' };
   url: string ="";
+  screenWidthUnit: number=0;
+  width: string="";
+  height: string="";
   constructor(
     private router: Router,
     private http: HttpClient){
@@ -31,6 +34,9 @@ export class HomeComponent implements OnInit{
     this.http.get<any[]>('/assets/tiles.json').subscribe(data => {
       this.tilesData = data;
     });
+    this.screenWidthUnit = window.innerWidth;
+    this.width = this.screenWidthUnit + 'px';
+    this.height = this.screenWidthUnit + 'px';
     this.monitorUrl();
   }
 

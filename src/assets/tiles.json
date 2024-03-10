@@ -1,99 +1,252 @@
 [
-    {
-      "subContainers": [
-        [
-          { "indexVal": 1, "size": "small", "launchPackage": "com.google.android.dialer", "iconName": "phone" },
-          { "indexVal": 2, "size": "small", "launchPackage": "com.google.android.apps.messaging", "iconName": "message" },
-          { "indexVal": 3, "size": "small", "launchPackage": "com.google.android.contacts", "iconName": "contact" },
-          { "indexVal": 4, "size": "small", "launchPackage": "com.google.android.gm", "iconName": "gmail" }
-        ],
-        [
-          { "indexVal": 5, "size": "normal", "launchPackage": "com.google.android.googlequicksearchbox", "iconName": "google" }
-        ]
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 1,
+          "size": "wide",
+          "liveLink": "/assets/livetiles/gallery.html"
+        }
       ]
-    },
-    {
-      "subContainers": [
-        [
-          { "indexVal": 29, "size": "normal", "liveLink": "/assets/livetiles/gallery.html" }
-        ],
-        [
-          { "indexVal": 29, "size": "normal", "liveLink": "/assets/livetiles/clock.html" }
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 1,
+          "size": "normal",
+          "launchPackage": "org.mozilla.firefox",
+          "iconName": "firefox"
+        }
+      ],
+      [
+        {
+          "indexVal": 5,
+          "size": "normal",
+          "launchPackage": "com.google.android.googlequicksearchbox",
+          "iconName": "google"
+        }
       ]
-    },
-    {
-      "subContainers": [
-        [
-          { "indexVal": 8, "size": "small", "launchPackage": "com.nononsenseapps.feeder.play", "iconName": "feeder" },
-          { "indexVal": 9, "size": "small", "launchPackage": "nl.viter.glider", "iconName": "glider" }
-        ],
-        [
-            { "indexVal": 10, "size": "small", "launchPackage": "com.google.android.youtube", "iconName": "youtube" },
-            { "indexVal": 11, "size": "small", "launchPackage": "com.google.android.apps.youtube.music", "iconName": "ytmusic" }
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 1,
+          "size": "small",
+          "launchPackage": "com.google.android.dialer",
+          "iconName": "phone"
+        },
+        {
+          "indexVal": 2,
+          "size": "small",
+          "launchPackage": "com.google.android.apps.messaging",
+          "iconName": "message"
+        },
+        {
+          "indexVal": 3,
+          "size": "small",
+          "launchPackage": "com.google.android.contacts",
+          "iconName": "contact"
+        },
+        {
+          "indexVal": 4,
+          "size": "small",
+          "launchPackage": "com.google.android.gm",
+          "iconName": "gmail"
+        }
+      ],
+      [
+        {
+          "indexVal": 5,
+          "size": "normal",
+          "launchPackage": "com.google.android.apps.bard",
+          "iconName": "gemini"
+        }
       ]
-    },
-    {
-      "subContainers": [
-        [
-          { "indexVal": 12, "size": "small", "launchPackage": "com.spotify.music", "iconName": "spotify" },
-          { "indexVal": 13, "size": "small", "launchPackage": "org.videolan.vlc", "iconName": "vlc" }
-        ],
-        [
-            { "indexVal": 14, "size": "small", "launchPackage": "com.google.android.apps.photos", "iconName": "photos" },
-            { "indexVal": 15, "size": "small", "launchPackage": "com.google.android.apps.maps", "iconName": "maps" }
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 8,
+          "size": "small",
+          "launchPackage": "com.nononsenseapps.feeder.play",
+          "iconName": "feeder"
+        },
+        {
+          "indexVal": 9,
+          "size": "small",
+          "launchPackage": "nl.viter.glider",
+          "iconName": "glider"
+        }
+      ],
+      [
+        {
+          "indexVal": 10,
+          "size": "small",
+          "launchPackage": "com.google.android.youtube",
+          "iconName": "youtube"
+        },
+        {
+          "indexVal": 11,
+          "size": "small",
+          "launchPackage": "com.google.android.apps.youtube.music",
+          "iconName": "ytmusic"
+        }
       ]
-    },
-    {
-      "subContainers": [
-        [
-          { "indexVal": 16, "size": "small", "launchPackage": "com.whatsapp", "iconName": "whatsapp" },
-          { "indexVal": 17, "size": "small", "launchPackage": "com.reddit.frontpage", "iconName": "reddit" }
-        ],
-        [
-            { "indexVal": 18, "size": "small", "launchPackage": "com.instagram.android", "iconName": "instagram" },
-            { "indexVal": 19, "size": "small", "launchPackage": "com.google.ar.lens", "iconName": "lens" }
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 12,
+          "size": "small",
+          "launchPackage": "com.spotify.music",
+          "iconName": "spotify"
+        },
+        {
+          "indexVal": 13,
+          "size": "small",
+          "launchPackage": "org.videolan.vlc",
+          "iconName": "vlc"
+        }
+      ],
+      [
+        {
+          "indexVal": 14,
+          "size": "small",
+          "launchPackage": "com.google.android.apps.photos",
+          "iconName": "photos"
+        },
+        {
+          "indexVal": 15,
+          "size": "small",
+          "launchPackage": "com.google.android.apps.maps",
+          "iconName": "maps"
+        }
       ]
-    },
-    {
-      "subContainers": [
-        [
-          { "indexVal": 21, "size": "small", "launchPackage": "com.nextbillion.groww", "iconName": "groww" },
-          { "indexVal": 22, "size": "small", "launchPackage": "com.google.android.apps.nbu.paisa.user", "iconName": "gpay" }
-        ],
-        [
-            { "indexVal": 23, "size": "small", "launchPackage": "com.google.android.keep", "iconName": "notes" },
-            { "indexVal": 24, "size": "small", "launchPackage": "com.google.android.deskclock", "iconName": "clock" }
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 16,
+          "size": "small",
+          "launchPackage": "com.whatsapp",
+          "iconName": "whatsapp"
+        },
+        {
+          "indexVal": 17,
+          "size": "small",
+          "launchPackage": "com.reddit.frontpage",
+          "iconName": "reddit"
+        }
+      ],
+      [
+        {
+          "indexVal": 18,
+          "size": "small",
+          "launchPackage": "com.instagram.android",
+          "iconName": "instagram"
+        },
+        {
+          "indexVal": 19,
+          "size": "small",
+          "launchPackage": "com.google.ar.lens",
+          "iconName": "lens"
+        }
       ]
-    },
-   
-    {
-      "subContainers": [
-        [
-          { "indexVal": 25, "size": "small", "launchPackage": "com.google.android.calculator", "iconName": "calculator" },
-          { "indexVal": 26, "size": "small", "launchPackage": "com.google.android.calendar", "iconName": "calendar" }
-        ],
-        [
-            { "indexVal": 27, "size": "small", "launchPackage": "com.android.chrome", "iconName": "chrome" },
-            { "indexVal": 28, "size": "small", "launchPackage": "com.sec.android.app.camera", "iconName": "camera"}
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 21,
+          "size": "small",
+          "launchPackage": "com.nextbillion.groww",
+          "iconName": "groww"
+        },
+        {
+          "indexVal": 22,
+          "size": "small",
+          "launchPackage": "com.google.android.apps.nbu.paisa.user",
+          "iconName": "gpay"
+        }
+      ],
+      [
+        {
+          "indexVal": 23,
+          "size": "small",
+          "launchPackage": "com.google.android.keep",
+          "iconName": "notes"
+        },
+        {
+          "indexVal": 24,
+          "size": "small",
+          "launchPackage": "com.google.android.deskclock",
+          "iconName": "clock"
+        }
       ]
-    }
-    ,
-   
-    {
-      "subContainers": [
-        [
-          { "indexVal": 7, "size": "normal", "launchPackage": "", "iconName": "paintbrush", "clickAction": "/color" }
-        ],
-        [
-            { "indexVal": 27, "size": "telegram", "launchPackage": "org.telegram.messenger", "iconName": "chrome" }
-        ]
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 25,
+          "size": "small",
+          "launchPackage": "com.google.android.calculator",
+          "iconName": "calculator"
+        },
+        {
+          "indexVal": 26,
+          "size": "small",
+          "launchPackage": "com.google.android.calendar",
+          "iconName": "calendar"
+        }
+      ],
+      [
+        {
+          "indexVal": 27,
+          "size": "small",
+          "launchPackage": "com.android.chrome",
+          "iconName": "chrome"
+        },
+        {
+          "indexVal": 28,
+          "size": "small",
+          "launchPackage": "com.sec.android.app.camera",
+          "iconName": "camera"
+        }
       ]
-    }
-  ]
-  
+    ]
+  },
+  {
+    "subContainers": [
+      [
+        {
+          "indexVal": 7,
+          "size": "normal",
+          "launchPackage": "",
+          "iconName": "paintbrush",
+          "clickAction": "/color"
+        }
+      ],
+      [
+        {
+          "indexVal": 27,
+          "size": "telegram",
+          "launchPackage": "org.telegram.messenger",
+          "iconName": "chrome"
+        }
+      ]
+    ]
+  }
+]

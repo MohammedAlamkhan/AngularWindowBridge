@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   screenWidthUnit: number=0;
   tileTypes = ['small','normal', 'wide', 'large'];
   sizeChart:any={};
+  borderNo: number=10;
   constructor(  private router: Router){}
   async ngOnInit(): Promise<void> {
 
@@ -39,9 +40,9 @@ export class AppComponent implements OnInit{
 
   calculateTileDimensions(type:string): any {
     this.screenWidthUnit = window.innerWidth/1200;
-    const width = this.getTileWidth(type) + 'px';
-    const height = this.getTileHeight(type) + 'px';
-    const border = 5*this.screenWidthUnit+'px';
+    const width =   this.screenWidthUnit * (this.getTileWidth(type)) + 'px';
+    const height =  this.screenWidthUnit * (this.getTileHeight(type)) + 'px';
+    const border = this.borderNo*this.screenWidthUnit+'px';
     return {"width": width, "height":height, "border":border} 
   
   }
@@ -49,30 +50,30 @@ export class AppComponent implements OnInit{
   private getTileWidth(size:string): number {
     switch (size) {
       case 'small':
-        return 290*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/4)-2*this.borderNo; // Aspect ratio maintained
       case 'normal':
-        return 590*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/2)-2*this.borderNo; // Aspect ratio maintained
       case 'wide':
-        return 1190*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/1)-2*this.borderNo; // Aspect ratio maintained
       case 'large':
-        return 1190*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/1)-2*this.borderNo; // Aspect ratio maintained
       default:
-        return 590*this.screenWidthUnit; // Default to normal size
+        return (1200/4)-2*this.borderNo; // Default to normal size
     }
   }
 
   private getTileHeight(size:string): number {
     switch (size) {
       case 'small':
-        return 290*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/4)-2*this.borderNo; // Aspect ratio maintained
       case 'normal':
-        return 590*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/2)-2*this.borderNo; // Aspect ratio maintained
       case 'wide':
-        return 560*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/2)-2*this.borderNo; // Aspect ratio maintained
       case 'large':
-        return 1190*this.screenWidthUnit; // Aspect ratio maintained
+        return (1200/1)-2*this.borderNo; // Aspect ratio maintained
       default:
-        return 590*this.screenWidthUnit; // Default to normal size
+        return (1200/4)-2*this.borderNo; // Default to normal size
     }
   }
 

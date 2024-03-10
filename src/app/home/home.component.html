@@ -1,4 +1,4 @@
-<div class="topdiv" appswipeDirective (swipeLeft)="launchRouter('/drawer')">
+<div class="topdiv" [style.width]="width" [style.height]="height" appswipeDirective (swipeLeft)="launchRouter('/drawer')">
   <app-tile *ngIf="showUrlTile" [indexVal]="getMonitorData().indexVal" [size]="getMonitorData().size" [liveLink]="getMonitorData().liveLink"></app-tile>
    <div class="container" *ngFor="let container of tilesData">
      <div class="sub-container" *ngFor="let subContainer of container.subContainers">
