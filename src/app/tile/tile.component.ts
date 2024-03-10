@@ -59,7 +59,7 @@ export class TileComponent {
     }
     if(!(localStorage.getItem("tileColor") || localStorage.getItem("colorPalette"))){
       this.tileColor = "white"
-      localStorage.setItem('tileColor', "white");
+      localStorage.setItem('tileColor', "gray");
       this.tilePalette = null;
     }
    
