@@ -1,6 +1,6 @@
 <div appswipeDirective (swipeRight)="launchRouter('/home')">
-    <h1 [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" data-tab="tab1" class="pivot">Applications</h1>
-    <input [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
+    <h1 [@bounceInLeft]="{ value: animationState, params: { 'duration': 300, 'delay': 100 } }" data-tab="tab1" class="pivot">Applications</h1>
+    <input [@bounceInLeft]="{ value: animationState, params: { 'duration': 300, 'delay': 200 } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
 <!-- <div *ngFor="let app of filteredAppList">
     <app-app-list-item  [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
 </div> -->
@@ -9,7 +9,7 @@
        
 <div *ngIf="this.filteredGroupedAppList[letter].length>0" class="letterBoxContainer">
     
-    <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="letterFilter(letter)" [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="icontile">
+    <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="openLetterFilter()" [@bounceInLeft]="{ value: animationState, params: { 'duration': 400, 'delay': 300 } }" class="icontile">
         <h2>{{ letter }}</h2>
     </div>
 
@@ -20,4 +20,10 @@
         </div>
     </div>
     </div>
-    
+
+
+    <div *ngIf="showFilter" class="grid-container">
+        <div *ngFor="let item of gridItems; let i = index"  (click)="letterFilter(item, isBlack(item))" [@bounceInLeft] ="{ value: animationStateForJumpMenu, params: { 'duration': 300, 'delay': i*25 } }" [ngClass]="{'black': isBlack(item)}" class="grid-item">
+          {{ item }}
+        </div>
+    </div>

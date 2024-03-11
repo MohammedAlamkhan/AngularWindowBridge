@@ -22,13 +22,13 @@ import { Router } from '@angular/router';
 export class DrawerComponent implements OnInit{
   filteredAppList: any;
   appList:any
-  
-  duration = 2000;
-  delay = 100;
+  gridItems = ['#', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
   groupedApps: any;
   keys: string[]=[];
   filteredGroupedAppList: any;
   originalKeys: string[]=[];
+  showFilter: boolean=false;
+  animationStateForJumpMenu: boolean=false;
   constructor(private bridgeService: BridgeService,  private router: Router){}
   async ngOnInit(): Promise<void> {
     this.appList = JSON.parse(localStorage.getItem("appList")+"");
@@ -39,25 +39,47 @@ export class DrawerComponent implements OnInit{
     this.filteredGroupedAppList = this.groupedApps;
     this.animate();
   } 
+  
+  isBlack(val: string): boolean {
+    const a = this.originalKeys.includes(val.toUpperCase())
+    return !a;
+    
+  }
 
+ 
   async getIcon(packageName: string){
     await this.bridgeService.getIcon(packageName)
   }
 
 
-  letterFilter(letter:string){
-    if(this.keys[1]){
-      const t = this.filteredAppList[letter];
-      this.filteredAppList = {};
+
+  openLetterFilter(){
+    this.showFilter =  true;
+    setTimeout(() => {
+      this.animationStateForJumpMenu = true;
+    }, 1);
+  }
+
+  letterFilter(letter:string, disabled:boolean){
+    
+    if(!disabled){
+      this.showFilter =  false;
+    if(this.originalKeys[0]){
+      this.filteredGroupedAppList = this.groupedApps
+      const t = this.filteredGroupedAppList[letter.toUpperCase()];
+      this.filteredGroupedAppList = {};
       let key = letter
-      this.filteredAppList[key] = t;
+      this.filteredGroupedAppList[key] = t;
       this.keys = [letter]
+      
+      this.animationStateForJumpMenu = false;
     }
     else{
       this.keys=this.originalKeys;
     }
-   
+    }
   }
+
   animationState = false;
   animate() {
     this.animationState = false;

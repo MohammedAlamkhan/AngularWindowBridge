@@ -27,7 +27,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   @Input() packageName: any;
   @Input() indexNo!: number;
 
-  duration = 400;
+  duration = 300;
   delay = 0;
   showFlyover: boolean = false;
   showPopup: boolean=false;
@@ -36,7 +36,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
   }
   ngOnInit(): void {
     this.animate();
-    this.delay = (this.indexNo+1)*100 < 1000 ? (this.indexNo+1)*100 : 1000;
+    this.delay = (this.indexNo+4)*100 < 1000 ? (this.indexNo+4)*100 : 1000;//4 because there are 3 elements above all apps and 1 for index 0
   }
 
  
