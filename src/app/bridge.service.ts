@@ -58,7 +58,10 @@ export class BridgeService {
     const groupedApps: {[key: string]: any[]} = {};
 
     apps.forEach(app => {
-        const firstLetter = app.label.charAt(0).toUpperCase();
+        let firstLetter = app.label.charAt(0).toUpperCase();
+        if (!(firstLetter >= 'A' && firstLetter <= 'Z')) {
+          firstLetter = '#';
+        }
         if (!groupedApps[firstLetter]) {
             groupedApps[firstLetter] = [];
         }
