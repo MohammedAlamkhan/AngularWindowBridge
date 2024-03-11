@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common"
 import { TileComponent } from '../tile/tile.component';
 import { swipeDirective } from '../swipe.directive';
 import { HttpClient } from '@angular/common/http';
+import { bounceOutLeftAnimation } from '../../assets/lib';
 
 
 
@@ -12,7 +13,10 @@ import { HttpClient } from '@angular/common/http';
   standalone: true,
   imports: [RouterOutlet, CommonModule, TileComponent, swipeDirective],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  animations: [
+    bounceOutLeftAnimation()
+  ]
 })
 
 export class HomeComponent implements OnInit{
@@ -25,6 +29,7 @@ export class HomeComponent implements OnInit{
   screenWidthUnit: number=0;
   width: string="";
   height: string="";
+  animationState = false;
   constructor(
     private router: Router,
     private http: HttpClient){
@@ -38,10 +43,22 @@ export class HomeComponent implements OnInit{
     this.width = this.screenWidthUnit + 'px';
     this.height = this.screenWidthUnit + 'px';
     this.monitorUrl();
+    this.animate();
   }
 
   launchRouter(route:any){
     this.router.navigate([route])
+  }
+  
+  animate() {
+    this.animationState = false;
+    setTimeout(() => {
+      this.animationState = true;
+    }, 3000);
+  }
+
+  getDelay(){
+    return Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
   }
 
  monitorUrl(){

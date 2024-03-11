@@ -17,9 +17,7 @@ const bounceOutLeft = () =>
     animate(
       '{{duration}}ms {{delay}}ms',
       keyframes([
-        style({ opacity: 1, transform: 'translate3d(0, 0, 0)', easing: 'ease', offset: 0 }),
-        style({ opacity: 1, transform: 'translate3d(20px, 0, 0)', easing: 'ease', offset: 0.2 }),
-        style({ opacity: 0, transform: 'translate3d(-{{translate}}, 0, 0)', easing: 'ease', offset: 1 })
+        style({ opacity: 1, transform: 'rotateX(-360deg)', easing: 'ease', offset: 1 }),
       ])
     )
   ]);
