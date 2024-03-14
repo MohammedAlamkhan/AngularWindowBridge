@@ -48,12 +48,11 @@ h1 {
  }
   
  .letterBoxContainer{
-    max-width: 20%;
+    max-width: 100%;
     background-color:black;
     position: sticky;
     top: 0;
     padding-top: 32px;
-    padding-bottom: 16px;
     z-index: 999;
  }
 
@@ -63,7 +62,7 @@ h1 {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
     background-color: transparent;
-    position: absolute;
+    position: fixed;
     top: 10%;
     width: 96%;
     left: 10%;
