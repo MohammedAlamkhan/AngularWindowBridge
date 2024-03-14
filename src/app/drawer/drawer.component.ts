@@ -3,8 +3,8 @@ import { BridgeService } from '../bridge.service';
 import { CommonModule } from '@angular/common';
 import { AppListItemComponent } from '../app-list-item/app-list-item.component';
 import { 
-  bounceInLeftAnimation,
-   bounceOutLeftAnimation,
+  bounceInUpAnimation,
+   
 } from './../../assets/lib/'
 import { swipeDirective } from '../swipe.directive';
 import { Router } from '@angular/router';
@@ -15,8 +15,7 @@ import { Router } from '@angular/router';
   templateUrl: './drawer.component.html',
   styleUrl: './drawer.component.css',
   animations: [
-    bounceInLeftAnimation(),
-    bounceOutLeftAnimation()
+    bounceInUpAnimation()
   ]
 })
 export class DrawerComponent implements OnInit{

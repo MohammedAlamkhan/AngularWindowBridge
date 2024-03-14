@@ -92,7 +92,7 @@ export class TileComponent {
        
           this.bridgeService.launchApp(this.launchPackage);
         
-      }, 450);
+      }, 750);
       
 
     }

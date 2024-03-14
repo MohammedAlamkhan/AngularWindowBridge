@@ -1,8 +1,7 @@
 import { Component, Input, AfterViewInit, OnInit } from '@angular/core';
 import { BridgeService } from '../bridge.service';
 import { 
-  bounceInLeftAnimation,
-   bounceOutLeftAnimation,
+  bounceInUpAnimation
 } from './../../assets/lib/'
 import { Router } from '@angular/router';
 import { swipeDirective } from '../swipe.directive';
@@ -16,8 +15,7 @@ import { PopoverComponent } from '../popover/popover.component';
   templateUrl: './app-list-item.component.html',
   styleUrl: './app-list-item.component.css',
   animations: [
-    bounceInLeftAnimation(),
-    bounceOutLeftAnimation()
+    bounceInUpAnimation()
   ]
 })
 
