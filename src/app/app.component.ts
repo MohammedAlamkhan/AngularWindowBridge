@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   screenWidthUnit: number=0;
   tileTypes = ['small','normal', 'wide', 'large'];
   sizeChart:any={};
-  borderNo: number=10;
+  borderNo: number=15;
   constructor(  private router: Router, private http: HttpClient){}
   async ngOnInit(): Promise<void> {
 

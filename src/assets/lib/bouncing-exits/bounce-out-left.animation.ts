@@ -1,5 +1,4 @@
-import { animate, animation, AnimationTriggerMetadata, keyframes, style, transition, trigger } from '@angular/animations';
-
+import { animate, animation, AnimationTriggerMetadata, keyframes, state, style, transition, trigger } from '@angular/animations';
 import { IAnimationOptions } from '../common/interfaces';
 import { useAnimationIncludingChildren } from '../common/use-animation-including-children';
 

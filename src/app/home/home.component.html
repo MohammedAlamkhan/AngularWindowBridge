@@ -1,8 +1,11 @@
 <div class="topdiv" [style.width]="width" [style.height]="height" appswipeDirective (swipeLeft)="launchRouter('/drawer')">
   <app-tile *ngIf="showUrlTile" [indexVal]="getMonitorData().indexVal" [size]="getMonitorData().size" [liveLink]="getMonitorData().liveLink"></app-tile>
    <div class="container" *ngFor="let container of tilesData">
-     <div [@bounceOutLeft]="{ value: animationState, params: { 'duration': 1300, 'delay': getDelay() } }" class="sub-container" *ngFor="let subContainer of container.subContainers">
-       <app-tile *ngFor="let tile of subContainer" [indexVal]="tile.indexVal" [explicitColor]="tile.explicitColor" [size]="tile.size" [launchPackage]="tile.launchPackage" [iconName]="tile.iconName" [title]="tile.title" [content]="tile.content" (click)="tile.clickAction ? launchRouter(tile.clickAction) : null" [liveLink]="tile.liveLink"></app-tile>
+     <div class="sub-container" *ngFor="let subContainer of container.subContainers">
+      <span style="display: inline-block;" *ngFor="let tile of subContainer" [@bounceOutLeft]="{ value: animationState, params: { 'duration': 1300, 'delay': getDelay() } }" >
+        <app-tile  [indexVal]="tile.indexVal" [explicitColor]="tile.explicitColor" [size]="tile.size" [launchPackage]="tile.launchPackage" [iconName]="tile.iconName" [title]="tile.title" [content]="tile.content" (click)="tile.clickAction ? launchRouter(tile.clickAction) : null" [liveLink]="tile.liveLink"></app-tile>
+      </span>
+       
      </div>
    </div>
  </div>
