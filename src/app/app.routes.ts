@@ -3,6 +3,7 @@ import {HomeComponent} from './home/home.component'
 import {DrawerComponent} from './drawer/drawer.component'
 import { ColorComponent } from './color/color.component';
 import { LaunchpadComponent } from './launchpad/launchpad.component';
+import { HomeEditorComponent } from './home-editor/home-editor.component';
 export const routes: Routes = [
     {
         path:'', title:'home', component:HomeComponent
@@ -18,5 +19,8 @@ export const routes: Routes = [
     },
     {
         path:"color", title:'drawer', component:ColorComponent
-    }
+    },
+    {
+        path:'editor', title:'editor', component:HomeEditorComponent
+    },
 ];

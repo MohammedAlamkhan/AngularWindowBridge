@@ -1,0 +1,15 @@
+<div class="top">
+  <div *ngFor="let container of data; let containerIndex = index">
+    <h3>Container {{ containerIndex + 1 }}</h3>
+    <div *ngFor="let subContainer of container.subContainers; let subContainerIndex = index">
+      <h4>Sub-Container {{ subContainerIndex + 1 }}</h4>
+      <div *ngFor="let item of subContainer; let itemIndex = index">
+        <div *ngFor="let property of item | keyvalue">
+          <label>{{ property.key }}:</label>
+          <input [(ngModel)]="item[property.key+'']" (ngModelChange)="updateData(containerIndex, subContainerIndex, itemIndex, property.key+'', item[property.key+''])">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

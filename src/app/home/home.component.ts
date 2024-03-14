@@ -36,9 +36,8 @@ export class HomeComponent implements OnInit{
 
     }
   async ngOnInit(): Promise<void> {
-    this.http.get<any[]>('/assets/tiles.json').subscribe(data => {
-      this.tilesData = data;
-    });
+    
+    this.tilesData = JSON.parse(localStorage.getItem("tilesData")+"");
     this.screenWidthUnit = window.innerWidth;
     this.width = this.screenWidthUnit + 'px';
     this.height = this.screenWidthUnit + 'px';

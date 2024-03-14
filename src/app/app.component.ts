@@ -3,6 +3,7 @@ import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import {CommonModule} from "@angular/common"
 import { HomeComponent } from './home/home.component';
 import { DrawerComponent } from './drawer/drawer.component';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -19,9 +20,12 @@ export class AppComponent implements OnInit{
   tileTypes = ['small','normal', 'wide', 'large'];
   sizeChart:any={};
   borderNo: number=10;
-  constructor(  private router: Router){}
+  constructor(  private router: Router, private http: HttpClient){}
   async ngOnInit(): Promise<void> {
 
+      if(!localStorage.getItem("tilesData")){
+        this.getTilesData();
+      }
       if(!localStorage.getItem("sizeChart")){
         this.tileTypes.forEach(element => {
           const a = this.calculateTileDimensions(element);
@@ -81,6 +85,12 @@ export class AppComponent implements OnInit{
     this.router.navigate([route])
   }
 
+  getTilesData(){
+    this.http.get<any[]>('/assets/tiles.json').subscribe(data => {
+      localStorage.setItem("tilesData",JSON.stringify(data))
+    });
+    
+  }
 
 
   backClicked(){

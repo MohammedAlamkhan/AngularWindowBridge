@@ -243,10 +243,11 @@
       ],
       [
         {
-          "indexVal": 27,
-          "size": "telegram",
-          "launchPackage": "org.telegram.messenger",
-          "iconName": "chrome"
+          "indexVal": 7,
+          "size": "normal",
+          "launchPackage": "",
+          "iconName": "editor",
+          "clickAction": "/editor"
         }
       ]
     ]
