@@ -28,6 +28,7 @@ export class TileComponent {
   @Input() launchPackage: string ='';
   @Input() liveLink:string='';
   @Input() indexVal:number=0;
+  @Input() explicitColor:string="";
 
   screenWidthUnit: number=0;
   iconUrl: string="";
@@ -65,7 +66,6 @@ export class TileComponent {
    
     this.sizeSpecs =  JSON.parse(localStorage.getItem("sizeChart")+"")[this.size];
    
-    
     
     this.color = this.getTileColor();
     this.delay = (this.indexVal+1)*25;
@@ -105,7 +105,10 @@ export class TileComponent {
 
 
   getTileColor(){
-    if(this.tilePalette){
+    if(this.explicitColor){
+      return this.explicitColor
+    }
+    else if(this.tilePalette){
       return this.tilePalette[Math.floor(Math.random() * (4 - 0 + 1)) + 0];
     }else{
         return this.tileColor;

@@ -2,7 +2,7 @@
   <app-tile *ngIf="showUrlTile" [indexVal]="getMonitorData().indexVal" [size]="getMonitorData().size" [liveLink]="getMonitorData().liveLink"></app-tile>
    <div class="container" *ngFor="let container of tilesData">
      <div [@bounceOutLeft]="{ value: animationState, params: { 'duration': 1300, 'delay': getDelay() } }" class="sub-container" *ngFor="let subContainer of container.subContainers">
-       <app-tile *ngFor="let tile of subContainer" [indexVal]="tile.indexVal" [size]="tile.size" [launchPackage]="tile.launchPackage" [iconName]="tile.iconName" [title]="tile.title" [content]="tile.content" (click)="tile.clickAction ? launchRouter(tile.clickAction) : null" [liveLink]="tile.liveLink"></app-tile>
+       <app-tile *ngFor="let tile of subContainer" [indexVal]="tile.indexVal" [explicitColor]="tile.explicitColor" [size]="tile.size" [launchPackage]="tile.launchPackage" [iconName]="tile.iconName" [title]="tile.title" [content]="tile.content" (click)="tile.clickAction ? launchRouter(tile.clickAction) : null" [liveLink]="tile.liveLink"></app-tile>
      </div>
    </div>
  </div>

@@ -89,7 +89,8 @@
           "indexVal": 10,
           "size": "small",
           "launchPackage": "com.google.android.youtube",
-          "iconName": "youtube"
+          "iconName": "youtube",
+          "explicitColor":"#FF0000"
         },
         {
           "indexVal": 11,
@@ -107,7 +108,8 @@
           "indexVal": 12,
           "size": "small",
           "launchPackage": "com.spotify.music",
-          "iconName": "spotify"
+          "iconName": "spotify",
+          "explicitColor": "#1ED760"
         },
         {
           "indexVal": 13,
