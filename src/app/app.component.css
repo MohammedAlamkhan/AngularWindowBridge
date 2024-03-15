@@ -28,18 +28,12 @@ body.footer div.appbar {
     width: 56px;
     text-align: center;
   }
-  @media all and (max-width: 504px) {
-    footer div.navigate-back {
+
+  footer div.navigate-back {
       left: 50%;
       margin-left: -148px;
     }
-  }
-  @media all and (min-width: 505px) and (max-width: 960px) {
-    footer div.navigate-back {
-      left: 50%;
-      margin-left: -86px;
-    }
-  }
+  
   footer div.home {
     width: 56px;
     height: 100%;
@@ -59,17 +53,9 @@ body.footer div.appbar {
     width: 56px;
     text-align: center;
   }
-  @media all and (max-width: 504px) {
-    footer div.home {
-      left: 50%;
-      margin-left: -24px;
-    }
-  }
-  @media all and (min-width: 505px) and (max-width: 960px) {
-    footer div.home {
-      left: 50%;
-      margin-left: -210px;
-    }
+  footer div.home {
+    left: 50%;
+    margin-left: -24px;
   }
   footer div.search {
     background-image: none;
@@ -95,88 +81,5 @@ body.footer div.appbar {
       margin-left: 100px;
     }
   }
-  @media all and (min-width: 505px) and (max-width: 960px) {
-    footer div.search {
-      left: 50%;
-      margin-left: 38px;
-    }
-  }
-  footer div.task-view {
-    background-image: none;
-    width: 56px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-  }
-  footer div.task-view:before {
-    content: '\E7C4';
-    display: block;
-    font-family: "Segoe MDL2 Assets";
-    font-size: 30px;
-    color: #fff;
-    line-height: 40px;
-    width: 56px;
-    text-align: center;
-  }
-  footer div.task-view.open:before {
-    content: '\EB91';
-  }
-  @media all and (max-width: 504px) {
-    footer div.task-view {
-      display: none;
-    }
-  }
-  @media all and (min-width: 505px) and (max-width: 960px) {
-    footer div.task-view {
-      left: 50%;
-      margin-left: 186px;
-    }
-  }
-  @media all and (min-width: 961px) {
-    footer.tablet-mode div.navigate-back {
-      left: 90px;
-      margin-left: 0;
-    }
-    footer.tablet-mode div.home {
-      width: 56px !important;
-      left: 0;
-      margin-left: 0;
-    }
-    footer.tablet-mode div.search {
-      left: 180px;
-      margin-left: 0;
-    }
-    footer.tablet-mode div.task-view {
-      left: 270px;
-      margin-left: 0;
-    }
-  }
-  @media all and (min-width: 961px) {
-    footer:not(.tablet-mode) div.navigate-back,
-    footer:not(.tablet-mode) div.home,
-    footer:not(.tablet-mode) div.search,
-    footer:not(.tablet-mode) div.task-view,
-    footer:not(.tablet-mode) div.navigate-back:before,
-    footer:not(.tablet-mode) div.home:before,
-    footer:not(.tablet-mode) div.search:before,
-    footer:not(.tablet-mode) div.task-view:before {
-      width: 48px !important;
-    }
-    footer:not(.tablet-mode) div.home {
-      left: 0;
-      margin-left: 0;
-    }
-    footer:not(.tablet-mode) div.navigate-back {
-      left: 48px;
-      margin-left: 0;
-    }
-    footer:not(.tablet-mode) div.search {
-      left: 96px;
-      margin-left: 0;
-    }
-    footer:not(.tablet-mode) div.task-view {
-      left: 144px;
-      margin-left: 0;
-    }
-  }
+
+ 
