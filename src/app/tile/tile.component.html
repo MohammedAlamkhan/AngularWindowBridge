@@ -1,4 +1,4 @@
-<div  [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="tile" (click)="launchApp()" [style.background-color]="color" [style.width]="sizeSpecs.width" [style.height]="sizeSpecs.height" [style.margin]="sizeSpecs.border">
+<div [@bounceInLeft]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" class="tile" (click)="launchApp()" [style.background-color]="color" [style.width]="sizeSpecs.width" [style.height]="sizeSpecs.height" [style.margin]="sizeSpecs.border">
     <div *ngIf="iconName" class="tile-content">
     
         <img  [src]="iconUrl" alt="Icon">

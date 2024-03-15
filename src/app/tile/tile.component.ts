@@ -1,13 +1,14 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BridgeService } from '../bridge.service';
 import { 
   bounceInLeftAnimation,
-   bounceOutLeftAnimation,
+   bounceInRightAnimation,
 } from './../../assets/lib/'
 import { BrowserModule } from '@angular/platform-browser';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { outputAst } from '@angular/compiler';
 
 @Component({
   selector: 'app-tile',
@@ -17,7 +18,7 @@ import { Router } from '@angular/router';
   styleUrl: './tile.component.css',
   animations: [
     bounceInLeftAnimation(),
-    bounceOutLeftAnimation()
+    bounceInRightAnimation()
   ]
 })
 export class TileComponent {
@@ -83,16 +84,16 @@ export class TileComponent {
     }, 1);
   }
  
+ 
 
   launchApp(){
-
     if(this.launchPackage){
-      this.launchRouter('./launch');
       setTimeout(() => {
-       
-          this.bridgeService.launchApp(this.launchPackage);
-        
-      }, 750);
+      this.launchRouter('./launch');
+    }, 750);
+      setTimeout(() => {
+         this.bridgeService.launchApp(this.launchPackage);
+      }, 1450);
       
 
     }
@@ -100,7 +101,7 @@ export class TileComponent {
   }
 
   launchRouter(p:string){
-    this.router.navigate([p], { queryParams: { appSrc: this.iconUrl } })
+   this.router.navigate([p], { queryParams: { appSrc: this.iconUrl } })
   }
 
 

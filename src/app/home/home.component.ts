@@ -1,10 +1,10 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, numberAttribute } from '@angular/core';
 import { RouterOutlet,  Router } from '@angular/router';
 import {CommonModule} from "@angular/common"
 import { TileComponent } from '../tile/tile.component';
 import { swipeDirective } from '../swipe.directive';
 import { HttpClient } from '@angular/common/http';
-import { bounceOutLeftAnimation } from '../../assets/lib';
+import { bounceInRightAnimation, bounceOutLeftAnimation } from '../../assets/lib';
 
 
 
@@ -15,7 +15,8 @@ import { bounceOutLeftAnimation } from '../../assets/lib';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
   animations: [
-    bounceOutLeftAnimation()
+    bounceOutLeftAnimation(),
+    bounceInRightAnimation()
   ]
 })
 
@@ -30,13 +31,16 @@ export class HomeComponent implements OnInit{
   width: string="";
   height: string="";
   animationState = false;
+  animationState2 = false;
+  delay: number=0;
+  selectedIconName: string='';
   constructor(
     private router: Router,
     private http: HttpClient){
 
     }
   async ngOnInit(): Promise<void> {
-    
+    this.animationState2 = false;
     this.tilesData = JSON.parse(localStorage.getItem("tilesData")+"");
     this.screenWidthUnit = window.innerWidth;
     this.width = this.screenWidthUnit + 'px';
@@ -46,7 +50,11 @@ export class HomeComponent implements OnInit{
   }
 
   launchRouter(route:any){
-    this.router.navigate([route])
+    this.animateRight();
+    setTimeout(()=>{
+      this.router.navigate([route])
+    },500)
+  
   }
   
   animate() {
@@ -56,8 +64,22 @@ export class HomeComponent implements OnInit{
     }, 3000);
   }
 
+  rotate(iconName: string){
+    this.selectedIconName =  iconName;
+    this.animateRight();
+  }
+
+  getDelayForRotateOut(icName:string){
+    if(icName===this.selectedIconName){
+      return 100;
+    }
+    else{
+      return 0
+    }
+  }
+
   getDelay(){
-    return Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
+    return Math.floor(Math.random() * (30000 - 1000 + 1)) + 1000;
   }
 
  monitorUrl(){
@@ -68,6 +90,12 @@ export class HomeComponent implements OnInit{
     this.showUrlTile=false;
   }
  }
+
+  
+ animateRight() {
+  this.animationState2 = !this.animationState2;
+}
+
 
  getMonitorData(){
   this.urlData = { "indexVal": 1, "size": "large", "liveLink": this.url+"" }

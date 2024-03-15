@@ -18,19 +18,15 @@ const bounceInRight = () =>
       animate(
         '{{duration}}ms {{delay}}ms',
         keyframes([
-          style({ transform: 'translate3d({{translate}}, 0, 0)', easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0 }),
-          style({ transform: 'translate3d(-25px, 0, 0)', easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0.6 }),
-          style({ transform: 'translate3d(10px, 0, 0)', easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0.75 }),
-          style({ transform: 'translate3d(-5px, 0, 0)', easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0.9 }),
-          style({ transform: 'translate3d(0, 0, 0)', easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 1 })
+        style({ visibility: "visible", transform: 'rotateY(0deg) translateY(0px) translateX(0px) translateZ(0px)', opacity: 1, easing: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)', offset: 0 }),
+        style({ visibility: "visible", transform: 'translateY(0px) translateX(-400px) translateZ(-50px) rotateY(-110deg) ', opacity: 1, easing: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)', offset: 1 })
         ])
       ),
       animate(
         '{{duration}}ms {{delay}}ms',
         keyframes([
-          style({ visibility: 'visible', opacity: 0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0 }),
-          style({ opacity: 1, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 0.6 }),
-          style({ opacity: 1, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', offset: 1 })
+          style({ visibility: 'visible', offset: 0 }),
+          style({ visibility: "visible", opacity: 1, offset: 0.6 }),
         ])
       )
     ])

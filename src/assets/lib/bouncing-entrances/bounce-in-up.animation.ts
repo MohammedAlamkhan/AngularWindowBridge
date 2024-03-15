@@ -20,8 +20,8 @@ const bounceInUp = () =>
         keyframes([
   
         
-          style({ transform: 'rotateY(-100deg) translateY(0px) translateX(50px) translateZ(150px)', opacity: 1, easing: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)', offset: 0 }),
-          style({ transform: 'rotateY(0deg) translateX(0px) translateZ(-50px)', opacity: 1, easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)', offset: 1 })
+          style({ transform: 'rotateY(100deg) translateY(0px) translateX(50px) translateZ(0px)', opacity: 1, easing: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)', offset: 0 }),
+          style({ transform: 'rotateY(0deg) translateX(0px) translateZ(150px)', opacity: 1, easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)', offset: 1 })
         ])
       ),
       animate(

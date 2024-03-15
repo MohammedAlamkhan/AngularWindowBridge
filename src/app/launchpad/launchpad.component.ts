@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { 
-  bounceInLeftAnimation
+  bounceInUpAnimation
 } from './../../assets/lib/'
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './launchpad.component.html',
   styleUrl: './launchpad.component.css',
   animations: [
-    bounceInLeftAnimation()
+    bounceInUpAnimation()
   ]
 })
 export class LaunchpadComponent implements OnInit {
