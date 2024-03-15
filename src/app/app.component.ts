@@ -4,10 +4,12 @@ import {CommonModule} from "@angular/common"
 import { HomeComponent } from './home/home.component';
 import { DrawerComponent } from './drawer/drawer.component';
 import { HttpClient } from '@angular/common/http';
+import { swipeDirective } from './swipe.directive';
+import { BridgeService } from './bridge.service';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, HomeComponent, DrawerComponent, RouterLink],
+  imports: [RouterOutlet, CommonModule, HomeComponent, DrawerComponent, RouterLink, swipeDirective],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -20,7 +22,7 @@ export class AppComponent implements OnInit{
   tileTypes = ['small','normal', 'wide', 'large'];
   sizeChart:any={};
   borderNo: number=15;
-  constructor(  private router: Router, private http: HttpClient){}
+  constructor(  private router: Router, private http: HttpClient, private bridgeService: BridgeService){}
   async ngOnInit(): Promise<void> {
 
       if(!localStorage.getItem("tilesData")){
@@ -41,6 +43,9 @@ export class AppComponent implements OnInit{
 
   }
 
+  assistant(){
+    this.bridgeService.launchApp("com.google.android.apps.bard");
+  }
 
   calculateTileDimensions(type:string): any {
     this.screenWidthUnit = window.innerWidth/1200;
