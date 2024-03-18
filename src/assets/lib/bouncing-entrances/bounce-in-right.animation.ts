@@ -18,8 +18,8 @@ const bounceInRight = () =>
       animate(
         '{{duration}}ms {{delay}}ms',
         keyframes([
-        style({ visibility: "visible", transform: 'rotateY(0deg) translateY(0px) translateX(0px) translateZ(0px)', opacity: 1, easing: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)', offset: 0 }),
-        style({ visibility: "visible", transform: 'translateY(0px) translateX(-400px) translateZ(-50px) rotateY(-110deg) ', opacity: 1, easing: 'cubic-bezier(0.895, 0.03, 0.685, 0.22)', offset: 1 })
+        style({ visibility: "visible", transform: 'rotateY(0deg) translateY(0px) translateX(0px) translateZ(100px)', opacity: 1, easing: 'cubic-bezier(0.03, 0.03, 0.085, 0.22)', offset: 0 }),
+        style({ visibility: "visible", transform: 'perspective(300px) translateY(0px) translateX(-400px) translateZ(100px) rotateY(-110deg) ', opacity: 1, easing: 'cubic-bezier(0.03, 0.03, 0.085, 0.22)', offset: 1 })
         ])
       ),
       animate(
