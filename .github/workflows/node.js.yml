@@ -21,7 +21,7 @@ jobs:
       with:
         node-version: '20'
     - run: npm ci
-    - run: ng build --output-path docs --base-href /AngularWindowBridge/ --deploy-url /AngularWindowBridge/
+    - run: npm run buildgh --if-present
     
     - name: Deploy to GitHub Pages
       if: github.event_name == 'push' && github.ref == 'refs/heads/main'
