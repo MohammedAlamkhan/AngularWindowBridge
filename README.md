@@ -1,6 +1,16 @@
+# Screenshots
+![Screenshot 2024-03-21 140929](https://github.com/MohammedAlamkhan/AngularWindowBridge/assets/57480478/3197e468-f917-4485-8316-1830707f7ddd)
+![Screenshot 2024-03-21 141004](https://github.com/MohammedAlamkhan/AngularWindowBridge/assets/57480478/48733fc7-f6d0-4621-85b6-6cb668ab81ce)
+![Screenshot 2024-03-21 141033](https://github.com/MohammedAlamkhan/AngularWindowBridge/assets/57480478/530f1656-4f35-4334-b61e-fca26a93e488)
+![image](https://github.com/MohammedAlamkhan/AngularWindowBridge/assets/57480478/281cfc49-7e2c-47db-9169-4a78d635a152)
+
+
+
 # AngularWindowBridge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+use it with Bridge launcher.
+https://github.com/bridgelauncher/launcher
 
 ## Development server
 
