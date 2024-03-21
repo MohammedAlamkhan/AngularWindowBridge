@@ -1,0 +1,65 @@
+<body onLoad="initClock()">
+    <script>
+        // START CLOCK SCRIPT
+
+        Number.prototype.pad = function (n) {
+            for (var r = this.toString(); r.length < n; r = 0 + r);
+            return r;
+        };
+
+        function updateClock() {
+            var now = new Date();
+            var
+                min = now.getMinutes(),
+                hou = now.getHours(),
+                mo = now.getMonth(),
+                dy = now.getDate()
+            var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            var tags = ["mon", "d", "h", "m"],
+                corr = [months[mo], dy, hou.pad(2), min.pad(2)];
+            for (var i = 0; i < tags.length; i++)
+                document.getElementById(tags[i]).firstChild.nodeValue = corr[i];
+        }
+
+        function initClock() {
+            updateClock();
+            window.setInterval("updateClock()", 60000);
+        }
+
+        // END CLOCK SCRIPT</script>
+    <style>
+        body {
+            background-color: transparent;
+            animation: flip 6s linear infinite;
+            transform: rotateX(0deg);
+            margin:0px;
+        }
+
+        #timedate {
+            font-family: "Segoe UI";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30pt;
+            text-align: left;
+            width: 100%;
+            color: white;
+        }
+        
+@keyframes flip{
+  0%{
+    transform: rotateX(0deg);
+  }
+  15%{
+    transform: rotateX(360deg);  
+  }
+  100%{
+    transform: rotateX(360deg); 
+  }
+}
+    </style>
+    <div id="timedate">
+        <a id="mon">January</a>
+        <a id="d">1</a>
+        <a id="h">12</a> :
+        <a id="m">00</a>
+    </div>
