@@ -1,0 +1,11 @@
+<div (click)="slideUp()" class="logon-splash-screen" style="display: block;" [@slideOutUp]="{ value: animationState, params: { 'duration': 800, 'delay': 0 } }">
+    <div class="date-time">
+        <p class="time">{{ currentDateTime | date:'h:mm' }}</p>
+        <p class="date">{{ currentDateTime | date:'EEEE, MMMM d' }}</p>
+        
+    </div>
+    <div class="icon-set">
+        <p><i class="ionicons ion-connection-bars"></i></p>
+        <p><i class="ionicons ion-battery-half"></i></p>
+    </div>
+</div>
