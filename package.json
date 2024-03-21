@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "buildgh": "ng build --output-path docs --base-href /AngularWindowBridge/ --deploy-url /AngularWindowBridge/",
+    "buildgh": "ng build --output-path docs --base-href /AngularWindowBridge/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
