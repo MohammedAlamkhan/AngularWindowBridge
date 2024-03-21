@@ -48,7 +48,7 @@ export class AppComponent implements OnInit{
   }
 
   calculateTileDimensions(type:string): any {
-    this.screenWidthUnit = window.innerWidth/1200;
+    this.screenWidthUnit = window.innerWidth * 0.9 /1200;
     const width =   this.screenWidthUnit * (this.getTileWidth(type)) + 'px';
     const height =  this.screenWidthUnit * (this.getTileHeight(type)) + 'px';
     const border = this.borderNo*this.screenWidthUnit+'px';

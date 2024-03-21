@@ -9,7 +9,10 @@
 }
 
 .topdiv{
-    width: 100%;
-    max-width: 100%;
-    min-width: 100%;
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 90%;
+    max-width: 90%;
+    min-width: 90%;
 }

@@ -49,7 +49,7 @@ h1 {
   
  .letterBoxContainer{
     max-width: 100%;
-    background-color:black;
+    background-color:#00000000;
     position: sticky;
     top: 0;
     padding-top: 32px;
@@ -90,4 +90,8 @@ h1 {
   .globe {
     background-color: #0099FF;
     font-size: 30px;
+  }
+
+  .drawer{
+    background-color: !important black;
   }

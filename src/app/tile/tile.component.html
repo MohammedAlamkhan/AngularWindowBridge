@@ -5,10 +5,12 @@
   
      
     </div>
-    <div *ngIf="title || content" >
-      <h2 *ngIf="title">{{ title }}</h2>
-      <p *ngIf="content">{{ content }}</p>
+    <!-- <div  *ngIf="size !== 'small'" class="title">
+      <p >{{ title }}</p>
     </div>
+    <div  *ngIf="size  !== 'small'" >
+      <p>{{ content }}</p>
+    </div> -->
 
     <div class="idiv" *ngIf="liveLink" >
       <iframe class="ifame" [src]="safeLiveLink"></iframe>

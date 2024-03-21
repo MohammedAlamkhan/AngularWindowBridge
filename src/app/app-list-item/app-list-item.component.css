@@ -15,7 +15,7 @@
     display: flex;
     align-items: center;
     padding: 8px 16px;
-    background-color: black; /* Set background color for better contrast */
+    background-color: #00000000; /* Set background color for better contrast */
     cursor: pointer; /* Indicate interactivity */
     transition: 0.2s all ease-in-out; /* Add smooth hover effect */
   }

@@ -1,4 +1,4 @@
-<div appswipeDirective (swipeRight)="launchRouter('/home')">
+<div class="drawer" appswipeDirective (swipeRight)="launchRouter('/home')">
     <h1 [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 100 } }" data-tab="tab1" class="pivot">Applications</h1>
     <input [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 200 } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
 <!-- <div *ngFor="let app of filteredAppList">
