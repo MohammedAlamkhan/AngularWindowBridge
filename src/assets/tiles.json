@@ -122,8 +122,8 @@
           "indexVal": 5,
           "size": "normal",
           "launchPackage": "com.google.android.googlequicksearchbox",
-          "iconName": "google",
-          "explicitColor": "",
+          "iconName": "",
+          "explicitColor":"url(assets/img/tiles/google.gif)",
           "liveLink": "",
           "clickAction": "",
           "title": "google"
@@ -149,7 +149,7 @@
           "size": "small",
           "launchPackage": "nl.viter.glider",
           "iconName": "glider",
-          "explicitColor": "",
+          "explicitColor": "orange",
           "liveLink": "",
           "clickAction": "",
           "title": ""
@@ -207,9 +207,9 @@
         {
           "indexVal": 14,
           "size": "small",
-          "launchPackage": "com.google.android.apps.photos",
-          "iconName": "photos",
-          "explicitColor": "",
+          "launchPackage": "com.snapchat.android",
+          "iconName": "snapchat",
+          "explicitColor": "#FFFC00",
           "liveLink": "",
           "clickAction": "",
           "title": ""
@@ -265,8 +265,8 @@
         {
           "indexVal": 24,
           "size": "small",
-          "launchPackage": "com.google.android.deskclock",
-          "iconName": "clock",
+          "launchPackage": "com.google.android.apps.photos",
+          "iconName": "photos",
           "explicitColor": "",
           "liveLink": "",
           "clickAction": "",
