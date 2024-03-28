@@ -1,4 +1,4 @@
-<div class="popover html" id="1709103666243" style="top: 409px; height: 97px;">
+<div class="popover html" [style.top]="'409px'" [style.max-height]="height">
     <div *ngFor="let content of options; let i=index" class="context-content">
         <button (click)="ok(content)">{{content}}</button>
     </div>

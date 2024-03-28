@@ -39,7 +39,9 @@ export class AppComponent implements OnInit{
       this.sizeChart["launcher"] = {"width":w,"height":h,"border":b};
       console.log(this.sizeChart)
       localStorage.setItem("sizeChart",JSON.stringify(this.sizeChart))
+    
       }
+
 
   }
 

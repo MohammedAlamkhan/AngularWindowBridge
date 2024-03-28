@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, numberAttribute } from '@angular/core';
 import { RouterOutlet,  Router } from '@angular/router';
-import {CommonModule} from "@angular/common"
+import {CommonModule, ViewportScroller} from "@angular/common"
 import { TileComponent } from '../tile/tile.component';
 import { swipeDirective } from '../swipe.directive';
 import { HttpClient } from '@angular/common/http';
@@ -36,10 +36,13 @@ export class HomeComponent implements OnInit{
   selectedIconName: string='';
   constructor(
     private router: Router,
-    private http: HttpClient){
+    private http: HttpClient,
+    private viewportScroller: ViewportScroller){
 
     }
   async ngOnInit(): Promise<void> {
+    
+    this.viewportScroller.scrollToPosition([0, 0]);
     this.animationState2 = false;
     this.tilesData = JSON.parse(localStorage.getItem("tilesData")+"");
     this.screenWidthUnit = window.innerWidth;

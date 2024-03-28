@@ -1,6 +1,39 @@
-.top{
+.top {
+    padding: 20px;
     color: white;
-    position: relative;
-    bottom: 300px;
-    top: 100px;
-}
+  }
+  
+  .container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .sub-container {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .property {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  label {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  
+  input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }

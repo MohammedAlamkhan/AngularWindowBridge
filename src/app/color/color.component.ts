@@ -22,6 +22,7 @@ export class ColorComponent implements OnInit{
   duration = 500;
   delay = Math.floor(Math.random() * (800 - 200 + 1)) + 200;
   colorPalettes = [
+    { label: "windows 8", colors: ["#be1e4a", "#009700", "#0078c9", "#a900a2", "#930000"] },
     { label: "Melon high", colors: ["#f0fff0", "#f0fff1", "#f0fff5", "#f0fff7", "#f0fff9"] },
     { label: "ClaraWhites Color Palette", colors: ["#fffdd0", "#fffff0", "#f0ead6", "#faf0e6", "#ffffff"] },
     { label: "Dress Code 4 Color Palette", colors: ["#f5ece3", "#f1e2d2", "#e6ceb3", "#ddbf9d", "#d4bca0"] },

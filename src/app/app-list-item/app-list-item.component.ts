@@ -88,7 +88,22 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
     if($event == "uninstall"){
       this.showPopup=true;
     }
+    if($event == "pin on homescreen"){
+      this.pin();
+    }
     
+  }
+
+
+  pin() {
+    // let tile ={}
+    // let data = JSON.parse(localStorage.getItem("tilesData")+"");
+    // if(data[data.length-1].subContainers.length ==1){
+    //   data[data.length-1].subContainers.push(tile);
+    // }
+    // else if(data[data.length-1].subContainers.length ==2){
+
+    // }
   }
 
   requestUninstall(){

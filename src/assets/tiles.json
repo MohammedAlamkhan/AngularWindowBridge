@@ -5,7 +5,12 @@
         {
           "indexVal": 1,
           "size": "wide",
-          "liveLink": "/assets/livetiles/gallery.html"
+          "liveLink": "/assets/livetiles/gallery.html",
+          "launchPackage": "",
+          "iconName": "",
+          "explicitColor": "",
+          "clickAction": "",
+          "title": ""
         }
       ]
     ]
@@ -17,8 +22,11 @@
           "indexVal": 12,
           "size": "normal",
           "launchPackage": "com.spotify.music",
-          "iconName": "spotify",
-          "explicitColor": "#1ED760"
+          "iconName": "",
+          "explicitColor": "url(assets/img/tiles/spotify.gif)",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ],
       [
@@ -27,30 +35,41 @@
           "size": "small",
           "launchPackage": "com.whatsapp",
           "iconName": "whatsapp",
-          "explicitColor": "#128c7e"
+          "explicitColor": "#128c7e",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 3,
           "size": "small",
           "launchPackage": "org.telegram.messenger",
           "iconName": "telegram",
-          "explicitColor":"#0088cc"
+          "explicitColor": "#0088cc",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 18,
           "size": "small",
           "launchPackage": "com.instagram.android",
           "iconName": "instagram",
-          "explicitColor":"#E1306C"
+          "explicitColor": "#E1306C",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 17,
           "size": "small",
           "launchPackage": "com.reddit.frontpage",
           "iconName": "reddit",
-          "explicitColor":"#FF5700"
+          "explicitColor": "#FF5700",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
-      
       ]
     ]
   },
@@ -62,25 +81,40 @@
           "size": "small",
           "launchPackage": "com.google.android.dialer",
           "iconName": "phone",
-          "title":"phone"
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": "phone"
         },
         {
           "indexVal": 2,
           "size": "small",
           "launchPackage": "com.google.android.apps.messaging",
-          "iconName": "message"
+          "iconName": "message",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 3,
           "size": "small",
           "launchPackage": "com.google.android.contacts",
-          "iconName": "contact"
+          "iconName": "contact",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 4,
           "size": "small",
           "launchPackage": "com.google.android.gm",
-          "iconName": "gmail"
+          "iconName": "gmail",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ],
       [
@@ -89,6 +123,9 @@
           "size": "normal",
           "launchPackage": "com.google.android.googlequicksearchbox",
           "iconName": "google",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
           "title": "google"
         }
       ]
@@ -102,13 +139,20 @@
           "size": "small",
           "launchPackage": "com.nononsenseapps.feeder.play",
           "iconName": "feeder",
-          "explicitColor":"#0f6200"
+          "explicitColor": "#0f6200",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 9,
           "size": "small",
           "launchPackage": "nl.viter.glider",
-          "iconName": "glider"
+          "iconName": "glider",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ],
       [
@@ -117,14 +161,20 @@
           "size": "small",
           "launchPackage": "com.google.android.youtube",
           "iconName": "youtube",
-          "explicitColor":"#FF0000"
+          "explicitColor": "#FF0000",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 11,
           "size": "small",
           "launchPackage": "com.google.android.apps.youtube.music",
           "iconName": "ytmusic",
-          "explicitColor":"#FF0000"
+          "explicitColor": "#FF0000",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ]
     ]
@@ -132,21 +182,25 @@
   {
     "subContainers": [
       [
-        
         {
           "indexVal": 1,
           "size": "small",
           "launchPackage": "org.mozilla.firefox",
           "iconName": "firefox",
-          "title":"firefox",
-          "explicitColor":"#FFCB00"
+          "explicitColor": "#FFCB00",
+          "liveLink": "",
+          "clickAction": "",
+          "title": "firefox"
         },
         {
           "indexVal": 13,
           "size": "small",
           "launchPackage": "org.videolan.vlc",
           "iconName": "vlc",
-          "explicitColor":"#E85E00"
+          "explicitColor": "#E85E00",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ],
       [
@@ -154,13 +208,21 @@
           "indexVal": 14,
           "size": "small",
           "launchPackage": "com.google.android.apps.photos",
-          "iconName": "photos"
+          "iconName": "photos",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 15,
           "size": "small",
           "launchPackage": "com.google.android.apps.maps",
-          "iconName": "maps"
+          "iconName": "maps",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ]
     ]
@@ -172,13 +234,21 @@
           "indexVal": 21,
           "size": "small",
           "launchPackage": "com.nextbillion.groww",
-          "iconName": "groww"
+          "iconName": "groww",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 22,
           "size": "small",
           "launchPackage": "com.google.android.apps.nbu.paisa.user",
-          "iconName": "gpay"
+          "iconName": "gpay",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ],
       [
@@ -187,13 +257,20 @@
           "size": "small",
           "launchPackage": "com.google.android.keep",
           "iconName": "notes",
-          "explicitColor":"#FFCB00"
+          "explicitColor": "#FFCB00",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 24,
           "size": "small",
           "launchPackage": "com.google.android.deskclock",
-          "iconName": "clock"
+          "iconName": "clock",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ]
     ]
@@ -205,13 +282,21 @@
           "indexVal": 25,
           "size": "small",
           "launchPackage": "com.google.android.calculator",
-          "iconName": "calculator"
+          "iconName": "calculator",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 26,
           "size": "small",
           "launchPackage": "com.google.android.calendar",
-          "iconName": "calendar"
+          "iconName": "calendar",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ],
       [
@@ -219,13 +304,21 @@
           "indexVal": 27,
           "size": "small",
           "launchPackage": "com.android.chrome",
-          "iconName": "chrome"
+          "iconName": "chrome",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         },
         {
           "indexVal": 28,
           "size": "small",
           "launchPackage": "com.sec.android.app.camera",
-          "iconName": "camera"
+          "iconName": "camera",
+          "explicitColor": "",
+          "liveLink": "",
+          "clickAction": "",
+          "title": ""
         }
       ]
     ]
@@ -238,8 +331,10 @@
           "size": "normal",
           "launchPackage": "",
           "iconName": "paintbrush",
+          "explicitColor": "",
+          "liveLink": "",
           "clickAction": "/color",
-          "title":"theme"
+          "title": "theme"
         }
       ],
       [
@@ -248,8 +343,10 @@
           "size": "normal",
           "launchPackage": "",
           "iconName": "editor",
+          "explicitColor": "",
+          "liveLink": "",
           "clickAction": "/editor",
-          "title":"edit homescreen"
+          "title": "edit homescreen"
         }
       ]
     ]

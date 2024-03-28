@@ -45,11 +45,12 @@ h1 {
     margin-left: 26px;
     font-family: "Segoe WP";
     text-transform: lowercase;
- }
+    background-color: #180153;
+  }
   
  .letterBoxContainer{
     max-width: 100%;
-    background-color:#00000000;
+    background-color:#180153;
     position: sticky;
     top: 0;
     padding-top: 32px;

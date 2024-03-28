@@ -8,6 +8,7 @@ import {
 } from './../../assets/lib/'
 import { swipeDirective } from '../swipe.directive';
 import { Router } from '@angular/router';
+import { ViewportScroller } from '@angular/common';
 @Component({
   selector: 'app-drawer',
   standalone: true,
@@ -28,8 +29,9 @@ export class DrawerComponent implements OnInit{
   originalKeys: string[]=[];
   showFilter: boolean=false;
   animationStateForJumpMenu: boolean=false;
-  constructor(private bridgeService: BridgeService,  private router: Router){}
+  constructor(private bridgeService: BridgeService,  private router: Router,private viewportScroller: ViewportScroller){}
   async ngOnInit(): Promise<void> {
+    this.viewportScroller.scrollToPosition([0, 0]);
     this.appList = JSON.parse(localStorage.getItem("appList")+"");
     this.groupedApps =  JSON.parse(localStorage.getItem("appListByAlphabet")+"")
     this.keys= Object.keys(this.groupedApps)
