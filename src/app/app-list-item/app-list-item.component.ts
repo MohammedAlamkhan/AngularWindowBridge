@@ -44,7 +44,7 @@ export class AppListItemComponent implements AfterViewInit, OnInit {
     this.animationState = false;
     setTimeout(() => {
       this.animationState = true;
-    }, 1);
+    }, 100);
   }
 
 

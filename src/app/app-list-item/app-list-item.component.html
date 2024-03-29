@@ -1,4 +1,4 @@
-<div appswipeDirective (longPress)="popUp('test')" [@bounceInUp]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }" (click)="launch(packageName)" class="app-list-item">
+<div appswipeDirective (longPress)="popUp('test')"  (click)="launch(packageName)" class="app-list-item">
     <div [attr.id]="packageName" class="icontile">
 
     </div>

@@ -29,6 +29,9 @@ export class DrawerComponent implements OnInit{
   originalKeys: string[]=[];
   showFilter: boolean=false;
   animationStateForJumpMenu: boolean=false;
+  
+  animationState = true;
+  show: boolean =  false;
   constructor(private bridgeService: BridgeService,  private router: Router,private viewportScroller: ViewportScroller){}
   async ngOnInit(): Promise<void> {
     this.viewportScroller.scrollToPosition([0, 0]);
@@ -81,12 +84,12 @@ export class DrawerComponent implements OnInit{
     }
   }
 
-  animationState = false;
   animate() {
     this.animationState = false;
     setTimeout(() => {
       this.animationState = true;
-    }, 1);
+      this.show =  true;
+    }, 0);
   }
 
   
