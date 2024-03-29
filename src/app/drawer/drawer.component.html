@@ -1,29 +1,35 @@
-<div class="drawer" appswipeDirective (swipeRight)="launchRouter('/home')">
-    <h1 [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 100 } }" data-tab="tab1" class="pivot">Applications</h1>
-    <input [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 200 } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
+<div [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 0 } }" class="drawer" appswipeDirective (swipeRight)="launchRouter('/home')">
+<span class="upper">
+    <h1 data-tab="tab1" class="pivot">Applications</h1>
+    <input (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
 <!-- <div *ngFor="let app of filteredAppList">
     <app-app-list-item  [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
 </div> -->
+</span>
 
+<div class="lower">
+    
     <div  *ngFor="let letter of keys">
        
-<div *ngIf="this.filteredGroupedAppList[letter].length>0" class="letterBoxContainer">
-    
-    <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="openLetterFilter()" [@bounceInUp]="{ value: animationState, params: { 'duration': 200, 'delay': 300 } }" class="icontile">
-        <h2>{{ letter }}</h2>
-    </div>
-
-</div>
+        <div *ngIf="this.filteredGroupedAppList[letter].length>0" class="letterBoxContainer">
+            
+            <div *ngIf="this.filteredGroupedAppList[letter].length>0"  (click)="openLetterFilter()"  class="icontile">
+                <h2>{{ letter }}</h2>
+            </div>
+        
+        </div>
         
         <div *ngFor="let app of filteredGroupedAppList[letter]; let i = index">
             <app-app-list-item [indexNo]= "i" [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
         </div>
+        
     </div>
-    </div>
-
-
-    <div *ngIf="showFilter" class="grid-container">
-        <div *ngFor="let item of gridItems; let i = index"  (click)="letterFilter(item, isBlack(item))" [@bounceInUp] ="{ value: animationStateForJumpMenu, params: { 'duration': 300, 'delay': i*25 } }" [ngClass]="{'black': isBlack(item)}" class="grid-item">
-          {{ item }}
+    
+    
+        <div *ngIf="showFilter" class="grid-container">
+            <div *ngFor="let item of gridItems; let i = index"  (click)="letterFilter(item, isBlack(item))"  [ngClass]="{'black': isBlack(item)}" class="grid-item">
+              {{ item }}
+            </div>
         </div>
+</div>
     </div>

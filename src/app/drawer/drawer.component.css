@@ -22,7 +22,7 @@ h1 {
     height: 32px;
     margin-left: 5%;
     padding: 0 12px;
-    width: 80%;
+    width: 100%;
     background-color: transparent !important;
     box-shadow: inset 0 0 0 2px #ffffff;
     font-family: "Segoe WP";
@@ -46,16 +46,18 @@ h1 {
     font-family: "Segoe WP";
     text-transform: lowercase;
     background-color: #180153;
+    margin-top: 16px;
   }
   
  .letterBoxContainer{
     max-width: 100%;
     background-color:#180153;
     position: sticky;
-    top: 0;
+    top: 15%;
     padding-top: 32px;
-    z-index: 999;
+    z-index: 99;
  }
+
 
  
  .grid-container {
@@ -93,6 +95,13 @@ h1 {
     font-size: 30px;
   }
 
-  .drawer{
-    background-color: !important black;
-  }
+ .upper{
+  position: fixed;
+  z-index: 999;
+  background-color: #180153;
+ }
+
+ .lower{
+  position: relative;
+  padding-top:35%
+ }

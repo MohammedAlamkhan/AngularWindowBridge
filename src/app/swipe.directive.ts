@@ -21,6 +21,7 @@ export class swipeDirective {
   @Output() swipeUp = new EventEmitter<void>();
   @Output() swipeDown = new EventEmitter<void>();
   @Output() longPress = new EventEmitter<void>();
+  @Output() reachedTop = new EventEmitter<void>();
 
   
   // Example of adding a border when the mouse enters the element
@@ -42,24 +43,31 @@ export class swipeDirective {
       } 
   }
 
-  @HostListener('touchend', ['$event']) onTouchEnd(event: TouchEvent) {
+  @HostListener('touchend', ['$event'])
+  onTouchEnd(event: TouchEvent) {
     clearTimeout(this.longPressTimeout);
-    if(this.currentX && this.startX && this.currentY && this.startY){
-        if (Math.abs(this.currentX - this.startX) > Math.abs(this.currentY - this.startY)) {
-          if (this.currentX > this.startX && Math.abs(this.currentX - this.startX) > this.threshold) {
-            this.swipeRight.emit();
-          } else if (this.currentX < this.startX && Math.abs(this.currentX - this.startX) > this.threshold) {
-            this.swipeLeft.emit();
-            
-           
-          }
-        } else {
-          if (this.currentY > this.startY && Math.abs(this.currentY - this.startY) > this.threshold) {
+
+    if (this.currentX && this.startX && this.currentY && this.startY) {
+      if (Math.abs(this.currentX - this.startX) > Math.abs(this.currentY - this.startY)) {
+        if (this.currentX > this.startX && Math.abs(this.currentX - this.startX) > this.threshold) {
+          this.swipeRight.emit();
+        } else if (this.currentX < this.startX && Math.abs(this.currentX - this.startX) > this.threshold) {
+          this.swipeLeft.emit();
+        }
+      } else {
+        if (this.currentY > this.startY && Math.abs(this.currentY - this.startY) > this.threshold) {
+          if (window.scrollY === 0 && this.startY < this.currentY && Math.abs(this.currentY - this.startY) > this.threshold) {
+            this.reachedTop.emit();
+          } else {
             this.swipeDown.emit();
-          } else if (this.currentY < this.startY && Math.abs(this.currentY - this.startY) > this.threshold) {
-            this.swipeUp.emit();
           }
+        } else if (this.currentY < this.startY && Math.abs(this.currentY - this.startY) > this.threshold) {
+          // Check if the user is at the top of the screen and trying to swipe up
+        
+            this.swipeUp.emit();
+          
         }
       }
+    }
   }
 }

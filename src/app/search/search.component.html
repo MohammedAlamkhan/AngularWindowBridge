@@ -1,0 +1,10 @@
+<div  [style.width]="spec.width" [style.height]="spec.height" [style.border]="spec.border" class="upper">
+    <h1 [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 100 } }" data-tab="tab1" class="pivot">search all</h1>
+    <input [@bounceInUp]="{ value: animationState, params: { 'duration': 800, 'delay': 200 } }" (keydown)="searchApp($event)" class="searchbox" type="text" placeholder="search all apps" autofocus>
+<!-- <div *ngFor="let app of filteredAppList">
+    <app-app-list-item  [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+</div> -->
+<div *ngFor="let app of filteredGroupedAppList; let i = index">
+    <app-app-list-item [indexNo]= "i" [label]="app.label" [imageSrc]="app.imageSrc" [packageName]="app.packageName"></app-app-list-item>
+</div>
+</div>

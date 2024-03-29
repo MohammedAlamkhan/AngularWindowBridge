@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {BridgeGetAppsResponse} from '@bridgelauncher/api'
+import {BridgeEventListenerArgs, BridgeGetAppsResponse} from '@bridgelauncher/api'
 import { BridgeMock } from '@bridgelauncher/api-mock';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
@@ -11,11 +11,16 @@ export class BridgeService {
   appListByAlphabet:any;
   appList: any;
   constructor(private http: HttpClient) { 
-    window.Bridge = new BridgeMock();
+    //window.Bridge = new BridgeMock();
+    
+    window.onBridgeEvent = function (...event: BridgeEventListenerArgs)
+    {
+      localStorage.removeItem("appList"); 
+      localStorage.removeItem("appList");
+    };
     if(!localStorage.getItem("appList")){
       this.getFinalList();
     }
-   
     
   }
 

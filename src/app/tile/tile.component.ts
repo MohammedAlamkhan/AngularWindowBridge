@@ -70,7 +70,7 @@ export class TileComponent {
     
     this.color = this.getTileColor();
     this.delay = (this.indexVal+1)*25;
-    this.iconUrl = `./../assets/svgs/${this.iconName}.svg`;
+    this.iconUrl =  this.iconName ? `./../assets/svgs/${this.iconName}.svg` : "";
     
     this.safeLiveLink = this.sanitizer.bypassSecurityTrustResourceUrl(this.liveLink);
     this.animate();

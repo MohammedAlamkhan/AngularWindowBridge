@@ -50,13 +50,17 @@ export class HomeComponent implements OnInit{
     this.height = this.screenWidthUnit + 'px';
     this.monitorUrl();
     this.animate();
+    const interval = setInterval(() => {
+      this.animate();
+    }, 10000);
+   
   }
 
   launchRouter(route:any){
     this.animateRight();
     setTimeout(()=>{
       this.router.navigate([route])
-    },500)
+    },450)
   
   }
   
@@ -64,7 +68,7 @@ export class HomeComponent implements OnInit{
     this.animationState = false;
     setTimeout(() => {
       this.animationState = true;
-    }, 3000);
+    }, 10000);
   }
 
   rotate(iconName: string){
@@ -82,7 +86,8 @@ export class HomeComponent implements OnInit{
   }
 
   getDelay(){
-    return Math.floor(Math.random() * (30000 - 1000 + 1)) + 1000;
+    let delay =  Math.floor(Math.random() * (10000 - 1000 + 1)) + 1000;
+    return delay
   }
 
  monitorUrl(){
@@ -99,6 +104,10 @@ export class HomeComponent implements OnInit{
   this.animationState2 = !this.animationState2;
 }
 
+
+search(){
+  this.router.navigate(['./search'])
+}
 
  getMonitorData(){
   this.urlData = { "indexVal": 1, "size": "large", "liveLink": this.url+"" }

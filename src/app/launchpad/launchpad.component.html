@@ -1,6 +1,6 @@
 <div [style.width]="spec.width" [style.height]="spec.height" [style.border]="spec.border"  class="top" [@bounceInUp]="{ value: animationState, params: { 'duration': duration, 'delay': delay } }">
    
-    <div class="iconbox">
+    <div *ngIf="imageSrc" class="iconbox">
          <img class="icon" [src]="imageSrc" alt="Icon">
     </div>
 </div>

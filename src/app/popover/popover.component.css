@@ -6,7 +6,7 @@
     left: 0;
     width: 100%;
     font-size: 11pt;
-    z-index: 2500;
+    z-index: 99999;
     padding-top: 35px;
     padding-bottom: 77px;
     pointer-events: all;
