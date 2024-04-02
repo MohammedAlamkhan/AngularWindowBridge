@@ -1,83 +1,67 @@
+.foot {
+  bottom: 0px !important;
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  z-index: 999;
+  background-color: #000;
+}
 
-body.footer div.appbar {
-    bottom: 0px !important;
-  }
-  footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 40px;
-    z-index: 999;
-    background-color: #000;
-  }
-  footer div.navigate-back {
-    background-image: none;
-    width: 56px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-  }
-  footer div.navigate-back:before {
-    content: '\E0A6';
-    display: block;
-    font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
-    color: #fff;
-    line-height: 40px;
-    width: 56px;
-    text-align: center;
-  }
+.navigate-back:before  {
+  background-image: none;
+  width: 56px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  content: '\E0A6';
+  display: block;
+  font-family: "Segoe MDL2 Assets";
+  font-size: 20px;
+  color: #fff;
+  line-height: 40px;
+  width: 56px;
+  text-align: center;
+  left: 50%;
+  margin-left: -148px;
+}
 
-  footer div.navigate-back {
-      left: 50%;
-      margin-left: -148px;
-    }
-  
-  footer div.home {
-    width: 56px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-    text-align: center;
-    background-image: none;
-  }
-  footer div.home:before {
-    content: '\E600';
-    display: block;
-    font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
-    color: #fff;
-    line-height: 40px;
-    width: 56px;
-    text-align: center;
-  }
-  footer div.home {
-    left: 50%;
-    margin-left: -24px;
-  }
-  footer div.search {
-    background-image: none;
-    width: 56px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    cursor: pointer;
-  }
-  footer div.search:before {
-    content: '\E094';
-    display: block;
-    font-family: "Segoe MDL2 Assets";
-    font-size: 20px;
-    color: #fff;
-    line-height: 40px;
-    width: 56px;
-    text-align: center;
-  }
-  @media all and (max-width: 504px) {
-    footer div.search {
-      left: 50%;
-      margin-left: 100px;
-    }
-  }
+
+.home:before  {
+  width: 56px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  text-align: center;
+  background-image: none;
+  content: '\E600';
+  display: block;
+  font-family: "Segoe MDL2 Assets";
+  font-size: 20px;
+  color: #fff;
+  line-height: 40px;
+  width: 56px;
+  text-align: center;
+  left: 50%;
+  margin-left: -24px;
+}
+
+.search:before  {
+  background-image: none;
+  width: 56px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  content: '\E094';
+  display: block;
+  font-family: "Segoe MDL2 Assets";
+  font-size: 20px;
+  color: #fff;
+  line-height: 40px;
+  width: 56px;
+  text-align: center;
+  left: 50%;
+  margin-left: 100px;
+}

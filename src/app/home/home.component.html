@@ -1,8 +1,8 @@
 <div class="topdiv" [style.width]="width" [style.height]="height" appswipeDirective (reachedTop)="search()" (swipeLeft)="launchRouter('/drawer')">
   <app-tile *ngIf="showUrlTile" [indexVal]="getMonitorData().indexVal" [size]="getMonitorData().size" [liveLink]="getMonitorData().liveLink"></app-tile>
    <div class="container" *ngFor="let container of tilesData">
-     <div class="sub-container" *ngFor="let subContainer of container.subContainers">
-      <span style="display: inline-block;" *ngFor="let tile of subContainer" [id]="tile.iconName" (click)="rotate(tile.iconName)"  [@bounceInRight]="{ value: animationState2, params: { 'duration': 700, 'delay': getDelayForRotateOut(tile.iconName) } }" [@bounceOutLeft]="{ value: animationState, params: { 'duration': 1300, 'delay': getDelay() } }" >
+     <div class="sub-container" *ngFor="let subContainer of container.subContainers; let j=index" >
+      <span style="display: inline-block;" *ngFor="let tile of subContainer; let i=index" [id]="tile.iconName" (click)="rotate(tile.iconName)"  [@bounceInRight]="{ value: animationState2, params: { 'duration': 700, 'delay': getDelayForRotateOut(tile.iconName,i+j) } }" [@bounceOutLeft]="{ value: animationState, params: { 'duration': 1300, 'delay': getDelay() } }" >
         <app-tile  [indexVal]="tile.indexVal" [explicitColor]="tile.explicitColor" [size]="tile.size" [launchPackage]="tile.launchPackage" [iconName]="tile.iconName" [title]="tile.title" [content]="tile.content" (click)="tile.clickAction ? launchRouter(tile.clickAction) : null" [liveLink]="tile.liveLink"></app-tile>
       </span>
        

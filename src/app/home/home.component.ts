@@ -60,7 +60,7 @@ export class HomeComponent implements OnInit{
     this.animateRight();
     setTimeout(()=>{
       this.router.navigate([route])
-    },450)
+    },750)
   
   }
   
@@ -76,12 +76,12 @@ export class HomeComponent implements OnInit{
     this.animateRight();
   }
 
-  getDelayForRotateOut(icName:string){
+  getDelayForRotateOut(icName:string, i:number){
     if(icName===this.selectedIconName){
       return 100;
     }
     else{
-      return 0
+      return i*75;
     }
   }
 
