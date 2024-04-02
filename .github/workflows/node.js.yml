@@ -24,8 +24,6 @@ jobs:
         run: ng build --prod
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.3.3
+        uses: actions/deploy-pages@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
           FOLDER: dist
